@@ -11,7 +11,7 @@ h3 {
     width: 960px;
     margin: auto;
     text-align: center;
-    padding: 0;
+    padding: 0 0 40px;
     font-size: 40px;
 }
 
@@ -25,12 +25,12 @@ ul {
     padding: 40px;
 }
 
-li {
+.li-menu {
     display: inline-block;
     width: 120px;
 }
 
-a {
+.menu {
     background: rgb(97, 97, 97);
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -45,12 +45,10 @@ a:hover {
 .wrapper {
     width: 470px;
     margin: auto;
-    padding-top: 40px;
 }
 
 .image-block {
     width: 420px;
-    display: block;
     margin: auto;
 }
 
@@ -61,7 +59,7 @@ a:hover {
 }
 
 .title-of-content {
-    font-size: 30px;
+    font-size: 29px;
     padding: 30px 0;
     color: rgb(97, 97, 97)
 }
@@ -70,4 +68,20 @@ a:hover {
     font-size: 14px;
     color: rgb(97, 97, 97);
     line-height: 1.5;
+}
+
+.wrap {
+    width: 100%;
+}
+
+.left-image {
+    float: left;
+    width: 420px;
+    margin: auto 30px;
+}
+
+.right-image {
+    float: right;
+    width: 420px;
+    margin: auto 30px;
 }

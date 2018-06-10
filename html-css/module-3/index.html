@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />-->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <title>Module-3-zadaniya</title>
@@ -16,23 +16,47 @@
         <h3>Задание 1</h3>
         <nav>
             <ul>
-                <li><a href="#">Menu-1</a></li>
-                <li><a href="#">Menu-2</a></li>
-                <li><a href="#">Menu-3</a></li>
-                <li><a href="#">Menu-4</a></li>
-                <li><a href="#">Menu-5</a></li>
-                <li><a href="#">Menu-6</a></li>
+                <li class="li-menu"><a class="menu" href="#">Menu-1</a></li>
+                <li class="li-menu"><a class="menu" href="#z2">Задание 2</a></li>
+                <li class="li-menu"><a class="menu" href="#z3">Задание 3</a></li>
+                <li class="li-menu"><a class="menu" href="#z4">Задание 4</a></li>
+                <li class="li-menu"><a class="menu" href="#">Menu-5</a></li>
+                <li class="li-menu"><a class="menu" href="#">Menu-6</a></li>
             </ul>
         </nav>
-        <h3>Задание 2</h3>
+        <h3>
+            <a name="z2"></a>Задание 2</h3>
         <div class="wrapper">
-            <div class="image-block">
+            <section class="image-block">
                 <img src="img/lpimg.jpg" alt="image">
                 <p class="lifestyle">LIFESTYLE</p>
                 <h2 class="title-of-content">More than just a music festival</h2>
                 <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-            </div>
+            </section>
         </div>
+        <h3>
+            <a name="z3"></a>Задание 3</h3>
+        <section class="wrap">
+            <div class="left-image">
+                <img src="img/lpimg.jpg" alt="left-image">
+                <p class="lifestyle">LIFESTYLE</p>
+                <h2 class="title-of-content">More than just a music festival</h2>
+                <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+            </div>
+            <div class="right-image">
+                <img src="img/rpimg.jpg" alt="right-image">
+                <p class="lifestyle">LIFESTYLE</p>
+                <h2 class="title-of-content">Life tastes better with coffee</h2>
+                <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+            </div>
+        </section>
+        <h3>
+            <a name="z4"></a>Задание 4</h3>
+        <ol>
+            <li>#myid > ul > li a:hover / 0 1 1 3</li>
+            <li>#myid:focus / 0 1 1 0</li>
+            <li>.menu > li > a:hover / 0 0 2 2</li>
+        </ol>
     </div>
 </body>
 
