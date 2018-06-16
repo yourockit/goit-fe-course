@@ -15,77 +15,92 @@ h3 {
     margin: auto;
     text-align: center;
     font-size: 40px;
+    color: hsl(0, 0%, 25%);
 }
 
 ul {
     display: table;
     padding: 40px 0 40px;
     margin: auto;
+    counter-reset: section;
 }
 
-.li-menu-1 {
+.li-menu-1,
+.li-menu-2,
+.li-menu-3,
+.li-menu-4 {
     float: left;
 }
 
-.menu-1 {
+.menu-1,
+.menu-3,
+.menu-4 {
     text-decoration: none;
     color: rgb(255, 255, 255);
-    background: rgb(97, 97, 97);
+    background: hsl(0, 0%, 35%);
     margin: 0 10px;
     border-radius: 2px;
-    padding: 20px 25px;
+    padding: 10px;
 }
 
 .menu-1:hover {
-    background: rgb(138, 138, 138)
+    background: hsl(0, 0%, 45%);
 }
 
 
 /* Задание 2*/
 
-.li-menu-2 {
-    float: left;
-    margin: 0 10px;
-    border-radius: 2px;
-}
-
 .menu-2 {
     display: block;
     text-decoration: none;
     color: #0E1116;
-    padding: 20px 25px;
+    padding: 13px 22px;
 }
 
 .li-menu-2:nth-child(3n+1) {
+    margin: 0 10px;
     background: #88292F;
+    border-radius: 2px;
 }
 
 .li-menu-2:nth-child(3n+2) {
+    margin: 0 10px;
     background: #5DB7DE;
+    border-radius: 2px;
 }
 
 .li-menu-2:nth-child(3n+3) {
+    margin: 0 10px;
     background: #0D5D56;
+    border-radius: 2px;
 }
 
 
 /* Задание 3*/
 
-.li-menu-3 {
-    float: left;
-    text-align: center;
-    width: 60px;
-    padding: 20px 0;
-    margin: 0 10px;
-    border-radius: 2px;
-    background: rgb(97, 97, 97);
-}
-
-.menu-3 {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
-
-.li-menu-3::before {
+.menu-3::before {
     content: url(../img/right.png);
+    vertical-align: -6px;
+}
+
+
+/* Задание 4*/
+
+.menu-4 {
+    vertical-align: middle;
+    margin: 0 10px 0 0;
+    font-size: 16px;
+}
+
+.li-menu-4::before {
+    display: inline-block;
+    text-align: center;
+    padding: 13px;
+    vertical-align: middle;
+    border-radius: 2px;
+    font-size: 16px;
+    background: hsl(0, 0%, 45%);
+    color: hsl(0, 0%, 100%);
+    counter-increment: section;
+    content: "" counter(section, upper-roman) ": ";
 }
