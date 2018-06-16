@@ -87,6 +87,7 @@ ul {
 /* Задание 4*/
 
 .menu-4 {
+    display: inline-block;
     vertical-align: middle;
     margin: 0 10px 0 0;
     font-size: 16px;
@@ -95,7 +96,8 @@ ul {
 .li-menu-4::before {
     display: inline-block;
     text-align: center;
-    padding: 13px;
+    width: 16px;
+    padding: 10px;
     vertical-align: middle;
     border-radius: 2px;
     font-size: 16px;
