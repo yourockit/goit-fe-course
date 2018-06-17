@@ -1,0 +1,170 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 1170px;
+    margin: auto;
+}
+
+.header {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 104px;
+    padding-top: 35px;
+}
+
+.mart-m {
+    font-size: 30px;
+    font-family: "Roboto";
+    color: rgb(26, 188, 156);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.mart {
+    float: left;
+    font-size: 30px;
+    font-family: "Roboto";
+    color: hsl(0, 4%, 35%);
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin-left: 30px;
+}
+
+ul {
+    float: right;
+    margin-right: 30px;
+}
+
+li {
+    float: left;
+    padding-top: 7px;
+}
+
+.home,
+.about-us,
+.page,
+.shop,
+.blog,
+.contact-us {
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: hsl(0, 93%, 1%);
+}
+
+li>a:hover {
+    color: rgb(26, 188, 156);
+}
+
+.home {
+    padding-right: 33px;
+}
+
+.about-us {
+    padding-right: 39px;
+}
+
+.page {
+    padding-right: 30px;
+}
+
+.shop {
+    padding-right: 27px;
+}
+
+.blog {
+    padding-right: 34px;
+}
+
+.section-title {
+    padding: 0;
+    text-align: center;
+    font-size: 48px;
+    color: rgb(81, 81, 81);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.fp {
+    margin-bottom: 32px;
+}
+
+.rectangle {
+    background-color: rgb(26, 188, 156);
+    margin: 0 auto 92px;
+    border: 0;
+    width: 164px;
+    height: 7px;
+}
+
+.st-1,
+.st-2 {
+    float: left;
+    margin: 0 15px 30px;
+}
+
+.img {
+    float: left;
+    margin: 0 15px 30px;
+}
+
+.img1::after {
+    content: "";
+    float: right;
+    width: 54px;
+    height: 40px;
+    content: "";
+    background-color: rgb(255, 255, 255);
+    opacity: 0.439;
+}
+
+.price {
+    background: rgb(50, 50, 50);
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    height: 40px;
+    width: 255px;
+}
+
+
+/* .img-a-a {
+    display: inline-block;
+    background: rgb(50, 50, 50);
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    height: 324px;
+    width: 255px;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 2.3;
+    position: absolute;
+}
+
+.price {
+    display: inline-block;
+    width: 54px;
+    height: 40;
+    text-align: center;
+    margin-left: 90px;
+    position: absolute;
+}
+
+.img-a-a::before {
+    float: left;
+    content: url(../img/item-1.jpg);
+    height: 284px;
+    overflow: hidden;
+}
+
+.img-a-a::after {
+    float: right;
+    width: 54px;
+    height: 40px;
+    content: "";
+    background-color: rgb(255, 255, 255);
+    opacity: 0.439;
+}
+
+.img-a-a:hover {
+    background: rgb(26, 188, 156);
+} */
