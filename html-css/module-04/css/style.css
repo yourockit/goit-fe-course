@@ -83,6 +83,10 @@ ul {
     vertical-align: -6px;
 }
 
+.menu-3:hover {
+    background: hsl(0, 100%, 30%);
+}
+
 
 /* Задание 4*/
 
@@ -93,7 +97,7 @@ ul {
     font-size: 16px;
 }
 
-.li-menu-4::before {
+.menu-4::before {
     display: inline-block;
     text-align: center;
     width: 16px;
@@ -105,4 +109,8 @@ ul {
     color: hsl(0, 0%, 100%);
     counter-increment: section;
     content: "" counter(section, upper-roman) ": ";
+}
+
+.menu-4:hover {
+    background: hsl(0, 100%, 30%);
 }
