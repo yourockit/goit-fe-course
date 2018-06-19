@@ -29,22 +29,17 @@ body {
     margin-left: 30px;
 }
 
-ul {
+.mhome {
     float: right;
     margin-right: 30px;
 }
 
-li {
+.mhome li {
     float: left;
     padding-top: 7px;
 }
 
-.home,
-.about-us,
-.page,
-.shop,
-.blog,
-.contact-us {
+.lhome a {
     text-decoration: none;
     font-size: 14px;
     text-transform: uppercase;
@@ -52,7 +47,7 @@ li {
     color: hsl(0, 93%, 1%);
 }
 
-li>a:hover {
+.lhome a:hover {
     color: rgb(26, 188, 156);
 }
 
@@ -85,7 +80,7 @@ li>a:hover {
     font-weight: bold;
 }
 
-.fp {
+.section-title h3 {
     margin-bottom: 32px;
 }
 
@@ -97,73 +92,53 @@ li>a:hover {
     height: 7px;
 }
 
-.st-1,
-.st-2 {
+section {
+    margin: 0 15px;
+}
+
+.dbox {
     float: left;
-    margin: 0 15px 30px;
-}
-
-.img {
-    float: left;
-    margin: 0 15px 30px;
-}
-
-.img1::after {
-    content: "";
-    float: right;
-    width: 54px;
-    height: 40px;
-    content: "";
-    background-color: rgb(255, 255, 255);
-    opacity: 0.439;
-}
-
-.price {
-    background: rgb(50, 50, 50);
+    margin: 0 15px 30px 15px;
     font-size: 18px;
-    color: rgb(255, 255, 255);
-    height: 40px;
-    width: 255px;
+    background: rgb(50, 50, 50);
 }
 
-.img-a-a {
-    display: inline-block;
-    background: rgb(50, 50, 50);
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    height: 324px;
-    width: 255px;
+.abox {
     text-decoration: none;
     font-weight: bold;
-    line-height: 2.3;
-    position: absolute;
+    color: rgb(255, 255, 255);
 }
 
-.price {
-    display: inline-block;
-    width: 54px;
-    height: 40;
+.ibox {
+    display: block;
+    width: 255px;
+}
+
+.dpbox {
+    display: table;
+    width: 255px;
+    height: 40px;
+    top: 50%;
+    left: 0%;
+    width: 100%;
+}
+
+.dbox:hover {
+    background: rgb(26, 188, 156);
+}
+
+.pbox {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 14px;
+}
+
+.p2box {
+    display: table-cell;
+    vertical-align: middle;
     text-align: center;
-    margin-left: 90px;
-    position: absolute;
-}
-
-.img-a-a::before {
-    float: left;
-    content: url(../img/item-1.jpg);
-    height: 284px;
-    overflow: hidden;
-}
-
-.img-a-a::after {
-    float: right;
     width: 54px;
     height: 40px;
-    content: "";
-    background-color: rgb(255, 255, 255);
-    opacity: 0.439;
-}
-
-.img-a-a:hover {
-    background: rgb(26, 188, 156);
+    background-color: rgba(255, 255, 255, 0.439);
+    /* opacity: 0.439; */
 }
