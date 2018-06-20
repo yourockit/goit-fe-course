@@ -7,7 +7,7 @@ body {
 .header {
     display: inline-block;
     width: 100%;
-    margin-bottom: 104px;
+    margin-bottom: 92px;
     padding-top: 35px;
 }
 
@@ -72,6 +72,7 @@ body {
 }
 
 .section-title {
+    display: block;
     padding: 0;
     text-align: center;
     font-size: 48px;
@@ -82,7 +83,7 @@ body {
 
 .featured span {
     display: inline-block;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .section-title h3::after {
@@ -102,7 +103,7 @@ main {
 
 .section-main {
     display: inline-block;
-    margin-bottom: 105px;
+    margin-bottom: 66px;
 }
 
 .box {
@@ -171,23 +172,24 @@ main {
 }
 
 .zbox-b {
-    padding-top: 15px;
+    padding-top: 5px;
     font-size: 18px;
     font-weight: bold;
 }
 
 .zbox-b span {
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     width: 301px;
     height: 44px;
+    line-height: 1.5;
 }
 
 .zbox-b::after {
     content: " ";
     display: block;
     background-color: rgb(78, 198, 171);
-    margin: 0 0 30px;
+    margin-bottom: 24px;
     border: 0;
     width: 136px;
     height: 3px;
@@ -196,8 +198,12 @@ main {
 .nbox-b {
     font-size: 14px;
     width: 335px;
-    height: 66px;
+    height: 70px;
     margin-bottom: 19px;
+    line-height: 1.8;
+    text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 button {
