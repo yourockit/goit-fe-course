@@ -80,13 +80,16 @@ body {
     font-weight: bold;
 }
 
-.section-title h3 {
+.featured span {
+    display: inline-block;
     margin-bottom: 32px;
 }
 
-.rectangle {
-    background-color: rgb(26, 188, 156);
-    margin: 0 auto 92px;
+.section-title h3::after {
+    content: " ";
+    display: block;
+    background-color: rgb(78, 198, 171);
+    margin: 0 auto 81px;
     border: 0;
     width: 164px;
     height: 7px;
@@ -94,6 +97,12 @@ body {
 
 main {
     margin: 0 15px;
+    padding-top: 11px;
+}
+
+.section-main {
+    display: inline-block;
+    margin-bottom: 105px;
 }
 
 .box {
@@ -138,4 +147,72 @@ main {
     height: 40px;
     background-color: rgba(255, 255, 255, 0.439);
     /* opacity: 0.439; */
+}
+
+.box-b1,
+.box-b2,
+.box-b3 {
+    float: left;
+    margin: 0 15px 30px 15px;
+    color: rgb(85, 82, 82);
+}
+
+.box-b2 {
+    margin-right: 19px;
+}
+
+.box-b1 {
+    width: 350px;
+}
+
+.box-b2,
+.box-b3 {
+    width: 347px;
+}
+
+.zbox-b {
+    padding-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.zbox-b span {
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 301px;
+    height: 44px;
+}
+
+.zbox-b::after {
+    content: " ";
+    display: block;
+    background-color: rgb(78, 198, 171);
+    margin: 0 0 30px;
+    border: 0;
+    width: 136px;
+    height: 3px;
+}
+
+.nbox-b {
+    font-size: 14px;
+    width: 335px;
+    height: 66px;
+    margin-bottom: 19px;
+}
+
+button {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    border: 1px rgb(78, 198, 171);
+    border-radius: 3px;
+    background-color: rgb(78, 198, 171);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    width: 160px;
+    height: 51px;
+}
+
+button:active {
+    background: rgb(161, 161, 161);
 }
