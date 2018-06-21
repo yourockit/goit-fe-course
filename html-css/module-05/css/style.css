@@ -1,0 +1,79 @@
+.gradient {
+    height: 100vh;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent 100%), url(../img/prog.jpg);
+    background-size: cover;
+}
+
+.box {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background-color: #424242;
+}
+
+.b1,
+.b2,
+.b3,
+.b4,
+.b5,
+.b6,
+.b7,
+.b8,
+.b9 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.b1 {
+    background: rgb(11, 0, 168);
+}
+
+.b2 {
+    left: 50%;
+    transform: translate(-50%);
+    background: rgb(39, 168, 0);
+}
+
+.b3 {
+    right: 0;
+    background: rgb(168, 109, 0);
+}
+
+.b4 {
+    top: 50%;
+    transform: translate(0, -50%);
+    background: rgb(0, 87, 168);
+}
+
+.b5 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(168, 0, 70);
+}
+
+.b6 {
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    background: rgb(0, 0, 0);
+}
+
+.b7 {
+    bottom: 0;
+    background: rgb(219, 223, 1);
+}
+
+.b8 {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    background: rgb(87, 0, 168);
+}
+
+.b9 {
+    bottom: 0;
+    right: 0;
+    background: rgb(168, 0, 0);
+}
