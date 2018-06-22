@@ -1,10 +1,16 @@
+/* Задание 1 */
+
 .gradient {
     height: 100vh;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent 100%), url(../img/prog.jpg);
     background-size: cover;
 }
 
+
+/* Задание 2 */
+
 .box {
+    float: left;
     width: 400px;
     height: 400px;
     position: relative;
@@ -76,4 +82,54 @@
     bottom: 0;
     right: 0;
     background: rgb(168, 0, 0);
+}
+
+
+/* Задание 3 */
+
+.section {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    position: relative;
+    margin-bottom: 10px;
+    background-color: rgb(59, 59, 59)
+}
+
+.menu-item>a,
+.submenu-item>a {
+    display: block;
+    padding: 0 40px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(59, 59, 59);
+    font-size: 20px;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.menu-item>a:hover,
+.submenu-item>a:hover {
+    background: rgb(114, 114, 114);
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.submenu-item {
+    min-width: 170px;
+}
+
+.menu-item:hover>.submenu {
+    display: block;
 }
