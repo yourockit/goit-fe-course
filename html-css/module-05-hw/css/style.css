@@ -1,6 +1,5 @@
 body {
     font-family: 'Roboto', sans-serif;
-    width: 1600px;
 }
 
 .nav-menu {
@@ -71,7 +70,99 @@ body {
     padding-right: 34px;
 }
 
-.section-title {
+.slider {
+    width: 1600px;
+    height: 600px;
+    background: url(../img/slider.jpg);
+    margin: auto;
+}
+
+.slider-fon {
+    display: inline-block;
+    width: 1600px;
+    height: 600px;
+    background-color: rgba(0, 0, 2, 0.52);
+    position: relative;
+}
+
+.slider-fon>h3 {
+    display: inline-block;
+    position: absolute;
+    font-family: "Roboto";
+    text-transform: uppercase;
+    line-height: 2;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content>span {
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.pre,
+.next {
+    display: inline-block;
+    position: absolute;
+    top: 37%;
+    font-size: 80px;
+    width: 104px;
+    height: 104px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(78, 198, 171);
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.pre {
+    left: 15.5%;
+}
+
+.next {
+    right: 15.5%;
+}
+
+.SLIDER_ARROW {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1600px;
+    height: 1455px;
+    z-index: 82;
+}
+
+. {
+    font-size: 100px;
+    font-family: "Pe";
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 0.11;
+    text-align: right;
+    position: absolute;
+    left: 232.937px;
+    top: 343.237px;
+    width: 22px;
+    height: 38px;
+    z-index: 81;
+}
+
+.Rectangle_5 {
+    background-color: rgb(78, 198, 171);
+    opacity: 0.651;
+    position: absolute;
+    left: 245px;
+    top: 316px;
+    width: 104px;
+    height: 104px;
+    z-index: 80;
+}
+
+
+/*.section-title {
     display: block;
     padding: 0;
     text-align: center;
@@ -147,9 +238,7 @@ main {
     width: 54px;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.439);
-    /* opacity: 0.439; */
 }
-
 .box-b1,
 .box-b2,
 .box-b3 {
@@ -157,26 +246,21 @@ main {
     margin: 0 15px 30px 15px;
     color: rgb(85, 82, 82);
 }
-
 .box-b2 {
     margin-right: 19px;
 }
-
 .box-b1 {
     width: 350px;
 }
-
 .box-b2,
 .box-b3 {
     width: 347px;
 }
-
 .zbox-b {
     padding-top: 5px;
     font-size: 18px;
     font-weight: bold;
 }
-
 .zbox-b span {
     display: inline-block;
     margin-bottom: 18px;
@@ -184,7 +268,6 @@ main {
     height: 44px;
     line-height: 1.5;
 }
-
 .zbox-b::after {
     content: " ";
     display: block;
@@ -194,7 +277,6 @@ main {
     width: 136px;
     height: 3px;
 }
-
 .nbox-b {
     font-size: 14px;
     width: 335px;
@@ -205,7 +287,6 @@ main {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 button {
     display: block;
     text-align: center;
@@ -218,7 +299,6 @@ button {
     width: 160px;
     height: 51px;
 }
-
 button:active {
     background: rgb(161, 161, 161);
 }
