@@ -1,6 +1,5 @@
 body {
     font-family: 'Roboto', sans-serif;
-    width: 1600px;
     margin: auto;
 }
 
@@ -79,17 +78,17 @@ body {
 /* СЛАЙДЕР */
 
 .slider {
-    height: 600px;
-    background: url(../img/slider.jpg);
-    margin: auto;
+    background-image: url(../img/slider.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
+    height: 600px;
 }
 
 .slider-fon {
-    display: inline-block;
-    width: 1600px;
-    height: 600px;
     background-color: rgba(0, 0, 2, 0.52);
+    background-size: cover;
+    height: 600px;
 }
 
 .nav-title {
@@ -337,6 +336,11 @@ article>.section-title {
     color: rgb(254, 254, 254);
 }
 
-.footer-section span {
-    color: rgb(78, 198, 171)
+.footer-section a {
+    color: rgb(254, 254, 254);
+    text-decoration: none;
+}
+
+.footer-a:hover {
+    color: rgb(78, 198, 171);
 }
