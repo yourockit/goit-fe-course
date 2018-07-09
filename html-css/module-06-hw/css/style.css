@@ -1,0 +1,337 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+}
+
+
+/* HEADER*/
+
+.nav-menu {
+    display: block;
+    width: 1170px;
+    height: 30px;
+    margin: auto;
+    padding: 35px 0 30px;
+}
+
+.mart {
+    float: left;
+    font-size: 30px;
+    font-family: "Roboto";
+    color: rgb(149, 225, 221);
+    font-weight: lighter;
+    margin-left: 30px;
+}
+
+.mhome {
+    float: right;
+    margin-right: 30px;
+}
+
+.mhome li {
+    float: left;
+    padding-top: 7px;
+}
+
+.lhome a {
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: hsl(0, 93%, 1%);
+}
+
+.lhome a:hover {
+    color: rgb(26, 188, 156);
+}
+
+.home {
+    padding-right: 33px;
+}
+
+.about-us {
+    padding-right: 39px;
+}
+
+.page {
+    padding-right: 30px;
+}
+
+.shop {
+    padding-right: 27px;
+}
+
+.blog {
+    padding-right: 34px;
+}
+
+
+/* СЛАЙДЕР */
+
+.slider {
+    background-image: url(../img/slider.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 600px;
+}
+
+.slider-fon {
+    background-color: rgba(0, 0, 2, 0.52);
+    background-size: cover;
+    height: 600px;
+}
+
+.nav-title {
+    width: 1170px;
+    height: 112px;
+    margin: auto;
+    position: relative;
+    top: 36%;
+}
+
+.nav-title>h3 {
+    display: inline-block;
+    font-family: "Roboto";
+    text-transform: uppercase;
+    width: 766px;
+    height: 100px;
+    margin: 0 38px 0 38px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.content>span {
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.pre,
+.next {
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    width: 104px;
+    height: 104px;
+    background-color: rgba(78, 198, 172, 0.651);
+    margin: 0 30px 0 30px;
+}
+
+.pre {
+    float: left;
+}
+
+.next {
+    float: right;
+}
+
+.pre>img,
+.next>img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pre:hover,
+.next:hover {
+    background: rgb(78, 198, 171);
+}
+
+.section-title {
+    display: block;
+    padding: 0;
+    text-align: center;
+    font-size: 48px;
+    color: rgb(81, 81, 81);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.featured span {
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+.section-title h3::after {
+    content: " ";
+    display: block;
+    background-color: rgb(78, 198, 171);
+    margin: 0 auto 81px;
+    border: 0;
+    width: 164px;
+    height: 7px;
+}
+
+
+/* КОНТЕНТ */
+
+.new-collection {
+    height: 676px;
+    background-color: rgb(233, 240, 253);
+}
+
+article>.section-title {
+    padding-top: 92px;
+}
+
+.section-main {
+    width: 1170px;
+    margin: auto;
+}
+
+
+/* КАРТОЧКИ-BUTTON */
+
+.card {
+    float: left;
+    margin: 0 0 30px 30px;
+    font-size: 18px;
+}
+
+.wrapper {
+    position: relative;
+    width: 255px;
+    height: 322px;
+}
+
+.wrapper img {
+    position: absolute;
+    width: 255px;
+    height: 322px;
+}
+
+.buttons {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 231px;
+    height: 258px;
+    margin: 12px;
+    background: rgba(0, 0, 0, 0.549);
+}
+
+.wrapper:hover .buttons {
+    display: flex;
+}
+
+.buttons__row {
+    display: flex;
+    justify-content: space-between;
+    width: 164px;
+    margin: 5px 0;
+}
+
+.icon {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: transparent;
+}
+
+.icon img {
+    position: absolute;
+    width: 26px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.icon:hover {
+    background-color: rgb(26, 188, 156);
+    border: 0;
+    width: 48px;
+    height: 48px;
+}
+
+.buttons__row--wide {
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(50, 50, 50);
+    width: 162px;
+    height: 46px;
+}
+
+.buttons__row--wide:hover {
+    background-color: rgb(26, 188, 156);
+    border: 0;
+    width: 164px;
+    height: 48px
+}
+
+.buttons__row--wide .icon {
+    border: 0;
+    background: none;
+    transition: 0;
+}
+
+.caption {
+    font-size: 14px;
+    text-decoration: none;
+    margin-left: 10px;
+    color: rgb(255, 255, 255);
+}
+
+
+/*NAME-CARD*/
+
+.inf__row {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    width: 255px;
+    height: 40px;
+    background: rgb(50, 50, 50);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.wrapper:hover .inf__row {
+    background: rgb(26, 188, 156);
+}
+
+.name__row {
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    width: 201px;
+    height: 40px;
+}
+
+.price__row {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    width: 44px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.439);
+}
+
+
+/*FOOTER*/
+
+.footer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88px;
+    background-color: rgb(50, 50, 50);
+    font-size: 16px;
+    color: rgb(254, 254, 254);
+}
+
+.footer-section a {
+    color: rgb(254, 254, 254);
+    text-decoration: none;
+}
+
+.footer-a:hover {
+    color: rgb(78, 198, 171);
+}
