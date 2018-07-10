@@ -57,21 +57,21 @@ nav>ul {
 }
 
 
-/* MAIN */
+/* AMAZING SERVICES */
 
-.service {
+.services {
     width: 315px;
-    height: 100px;
-    margin: auto;
+    height: 115px;
+    margin: 0 auto 45px;
 }
 
-.www {
+h2 {
     font-family: 'Kaushan Script', cursive;
     text-align: center;
     font-size: 24px;
 }
 
-.as {
+h3 {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
@@ -79,7 +79,7 @@ nav>ul {
     margin-bottom: 20px;
 }
 
-.service:after {
+.services:after {
     display: block;
     content: "";
     height: 3px;
@@ -88,56 +88,98 @@ nav>ul {
     margin: auto;
 }
 
-.services-box {
+
+/* CONTENT */
+
+.items {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 92px;
 }
 
-.services-box>li {
+.items>li {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 395px;
     height: 170px;
 }
 
-.services {
+.item-content {
     width: 300px;
     height: 80px;
 }
 
-.services>p {
+.item-content>h4 {
+    display: block;
     text-transform: uppercase;
-    line-height: 2;
-}
-
-p>span {
-    text-transform: capitalize;
-}
-
-.Photography {
     font-size: 14px;
-    font-family: "Montserrat";
-    color: rgb(51, 51, 51);
-    text-transform: uppercase;
-    line-height: 1.2;
-    text-align: left;
-    position: absolute;
-    left: 449.937px;
-    top: 354.6px;
-    z-index: 54;
+    margin-bottom: 20px;
 }
 
-.Lorem_ipsum_dolor_sit_amet__consectetur_adipisc {
+.item-content>p {
+    text-transform: capitalize;
     font-size: 15px;
-    font-family: "Roboto";
-    color: rgb(153, 153, 153);
     line-height: 1.6;
-    text-align: left;
-    position: absolute;
-    left: 450px;
-    top: 410.2px;
-    width: 269px;
-    height: 39px;
-    z-index: 55;
+    color: rgb(153, 153, 153);
+}
+
+.item-1:before,
+.item-2:before,
+.item-3:before,
+.item-4:before,
+.item-5:before,
+.item-6:before {
+    height: 80px;
+    width: 32px;
+    padding: 0 25px;
+}
+
+.item-1:before {
+    content: url(../img/alarm.png);
+}
+
+.item-2:before {
+    content: url(../img/line-graph.png);
+}
+
+.item-3:before {
+    content: url(../img/computer.png);
+}
+
+.item-4:before {
+    content: url(../img/book.png);
+}
+
+.item-5:before {
+    content: url(../img/home.png);
+}
+
+.item-6:before {
+    content: url(../img/image.png);
+}
+
+.text {
+    display: block;
+    margin: 0 auto 90px;
+    text-align: center;
+    font-size: 15px;
+    color: rgb(153, 153, 153);
+    width: 945px;
+    height: 50px;
+    line-height: 1.6;
+}
+
+
+/* SECTION-CARD */
+
+.section-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper {
+    width: 380px;
+    height: 470px;
+    background-color: rgb(149, 225, 211);
 }
