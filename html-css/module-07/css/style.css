@@ -1,0 +1,14 @@
+.wrapper {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+
+table {
+    border: 2px solid #ddd;
+    margin: auto;
+}
+
+th {
+    border: 2px solid #ccc;
+}
