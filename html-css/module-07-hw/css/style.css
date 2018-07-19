@@ -1,0 +1,122 @@
+/* HEADER*/
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 940px;
+    height: 50px;
+    margin: 0 auto 120px;
+}
+
+h1 {
+    font-family: "OleoScriptSwashCaps-Regular";
+    font-size: 26px;
+    color: rgb(254, 209, 54);
+    font-weight: normal;
+    width: 79px;
+    height: 30px;
+}
+
+nav>ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 485px;
+    height: 30px;
+}
+
+.menu>a {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: hsl(0, 93%, 1%);
+}
+
+.menu>a:hover {
+    color: rgb(254, 209, 54);
+}
+
+
+/* SERVICES */
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: 65px;
+    margin: 0 auto 70px;
+}
+
+.title-services {
+    font-size: 40px;
+    font-family: "Montserrat";
+    color: rgb(34, 34, 34);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.sub-title {
+    font-size: 16px;
+    font-family: "DroidSerif";
+    color: rgb(119, 119, 119);
+    font-style: italic;
+}
+
+.services-box {
+    display: flex;
+    justify-content: space-between;
+    width: 940px;
+    margin: 0 auto 120px;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 275px;
+    height: 190px;
+}
+
+.title-icon {
+    font-size: 18px;
+    font-family: "Montserrat";
+    color: rgb(34, 34, 34);
+    line-height: 4.167;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 14px;
+    font-family: "RobotoSlab";
+    color: rgb(119, 119, 119);
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+/*FOOTER*/
+
+.footer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88px;
+    background-color: rgb(50, 50, 50);
+    font-size: 16px;
+    color: rgb(254, 254, 254);
+}
+
+.footer-section a {
+    color: rgb(254, 254, 254);
+    text-decoration: none;
+}
+
+.footer-a:hover {
+    color: rgb(78, 198, 171);
+}
