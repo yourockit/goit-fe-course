@@ -1,31 +1,9 @@
-/* @font-face {
-    font-family: 'Conv_Allura-Regular';
-    src: url('../fonts/Allura-Regular.woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 @font-face {
-    font-family: 'Conv_GreatVibes-Regular';
-    src: url('../fonts/GreatVibes-Regular.woff');
-    font-weight: normal;
-    font-style: normal;
-} */
-
-@font-face {
-    font-family: 'OleoScriptSwashCaps-Regular';
-    src: url('../fonts/OleoScriptSwashCaps-Regular.woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-/* @font-face {
-    font-family: 'Conv_PetitFormalScript-Regular';
+    font-family: 'PetitFormalScript-Regular';
     src: url('../fonts/PetitFormalScript-Regular.woff');
     font-weight: normal;
     font-style: normal;
-} */
+}
 
 @font-face {
     font-family: 'Montserrat';
