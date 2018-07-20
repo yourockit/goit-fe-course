@@ -6,7 +6,7 @@
     align-items: center;
     width: 940px;
     height: 50px;
-    margin: 0 auto 120px;
+    margin: auto;
 }
 
 h1 {
@@ -49,7 +49,8 @@ nav>ul {
     align-items: center;
     width: 300px;
     height: 65px;
-    margin: 0 auto 70px;
+    margin: auto;
+    padding: 70px 0 70px;
 }
 
 .title-services {
@@ -97,6 +98,92 @@ nav>ul {
     color: rgb(119, 119, 119);
     line-height: 1.2;
     text-align: center;
+}
+
+
+/* CONTACT US */
+
+.article-box {
+    background-image: url(../img/map-image.png), url(../img/background.jpg);
+    width: 1400px;
+    height: 677px;
+    margin: auto;
+}
+
+.title-contact-us {
+    font-size: 40px;
+    font-family: "Montserrat";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 940px;
+    height: 310px;
+    margin: auto;
+}
+
+.form-input {
+    display: flex;
+    justify-content: space-between;
+    width: 940px;
+    margin: auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 455px;
+    height: 211px;
+}
+
+.input {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 2px;
+    width: 455px;
+    height: 50px;
+    padding: 0;
+}
+
+textarea {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 2px;
+    width: 455px;
+    height: 209px;
+    padding: 0;
+    margin: 0;
+}
+
+.submit {
+    border: 1px solid rgb(254, 209, 54);
+    border-radius: 3px;
+    background-color: rgb(254, 209, 54);
+    width: 240px;
+    height: 66px;
+    font-size: 18px;
+    font-family: "Montserrat";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.Button {
+    border-radius: 3px;
+    background-color: rgb(254, 209, 54);
+    position: absolute;
+    left: 580px;
+    top: 1138px;
+    width: 240px;
+    height: 66px;
+    z-index: 6;
 }
 
 
