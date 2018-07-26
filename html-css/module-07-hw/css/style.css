@@ -112,6 +112,7 @@ nav>ul {
     background-image: url(../img/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    min-width: 940px;
     height: 677px;
     margin: auto;
 }
