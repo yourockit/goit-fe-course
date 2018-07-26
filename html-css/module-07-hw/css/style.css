@@ -112,7 +112,6 @@ nav>ul {
     background-image: url(../img/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    min-width: 1400px;
     height: 677px;
     margin: auto;
 }
@@ -130,7 +129,6 @@ form {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 940px;
     height: 310px;
     margin: auto;
 }
@@ -146,7 +144,6 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 455px;
     height: 211px;
 }
 
