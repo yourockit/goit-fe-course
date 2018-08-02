@@ -51,10 +51,11 @@ p {
 .wrapper {
     display: grid;
     background-color: rgb(54, 54, 54);
-    grid-template-columns: 240px 240px 240px 240xp;
+    grid-template-columns: 240px 240px 240xp;
     grid-template-rows: 120px 120px 240px;
     grid-gap: 10px;
-    width: 990px;
+    width: 1010px;
+    padding: 10px;
     margin: auto;
 }
 
