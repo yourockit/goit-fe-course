@@ -5,9 +5,14 @@
     background-size: cover;
 }
 
-.header-item {
-    height: 72px;
-    padding: 0;
+.box__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5%;
+    height: 180px;
+    margin-bottom: 30px;
 }
 
 .sub-row {
