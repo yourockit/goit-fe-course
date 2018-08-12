@@ -10,96 +10,153 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-    <title>Home Work Module 06</title>
+    <title>Home Work Module 10</title>
 </head>
 
 <body>
-    <!-- HEADER -->
+    <!-- BANNER -->
     <header>
-        <nav>
-            <h1 class="logo">MoGo</h1>
-            <ul>
-                <li><a class="menu" href="#">ABOUT</a></li>
-                <li><a class="menu" href="#">SERVICE</a></li>
-                <li><a class="menu" href="#">WORK</a></li>
-                <li><a class="menu" href="#">BLOG</a></li>
-                <li><a class="menu" href="#">CONTACT</a></li>
-            </ul>
-        </nav>
+        <div class="banner">
+            <div class="banner__wrapper">
+                <h1 class="banner__logo">MoGo</h1>
+                <nav>
+                    <ul class="banner__menu">
+                        <li><a class="menu__link menu__link--mod" href="#">ABOUT</a></li>
+                        <li><a class="menu__link menu__link--mod" href="#">SERVICE</a></li>
+                        <li><a class="menu__link menu__link--mod" href="#">WORK</a></li>
+                        <li><a class="menu__link menu__link--mod" href="#">BLOG</a></li>
+                        <li><a class="menu__link menu__link--mod" href="#">CONTACT</a></li>
+                        <li><a href="#"><svg class="icon--mod">
+                                <use xlink:href="sprite.svg#cart"></use>
+                            </svg></a>
+                        </li>
+                        <li><a href="#"><svg class="icon--mod">
+                                <use xlink:href="sprite.svg#search"></use>
+                            </svg></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="banner__greeting">
+                <p class="template">Creative Template</p>
+                <p class="greeting">Welcome to MoGo</p>
+                <a class="button" href="#">Learn more</a>
+            </div>
+        </div>
     </header>
     <main>
-        <!-- AMAZING SERVICES -->
-        <article>
-            <div class="services">
-                <h2>We work with</h2>
-                <h3>AMAZING SERVICES</h3>
+        <!-- NEWS -->
+        <article class="news">
+            <div class="news__title title-item">
+                <h3 class="title-item__title">We work with</h3>
+                <p class="title-item__mod">AMAZING SERVICES</p>
             </div>
-            <!-- CONTENT -->
-            <ul class="items">
-                <li class="item-1">
-                    <div class="item-content">
-                        <h4>Photography</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+            <ul class="news__list">
+                <li class="news__photo news-item">
+                    <div class="news-item__icon-wrapper">
+                        <svg class="news-item__icon">
+                        <use xlink:href="sprite.svg#alarm"></use>
+                    </svg>
+                    </div>
+                    <div class="news-item__wrapper">
+                        <h4 class="news-item__title">Photography</h4>
+                        <p class="news-item__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
                     </div>
                 </li>
-                <li class="item-2">
-                    <div class="item-content">
-                        <h4>Web Design</h4>
-                        <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm</p>
+                <li class="news__web news-item">
+                    <div class="news-item__icon-wrapper">
+                        <svg class="news-item__icon">
+                                <use xlink:href="sprite.svg#line_fraph"></use>
+                            </svg>
+                    </div>
+                    <div class="news-item__wrapper">
+                        <h4 class="news-item__title">Web Design</h4>
+                        <p class="news-item__text">Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm</p>
                     </div>
                 </li>
-                <li class="item-3">
-                    <div class="item-content">
-                        <h4>Creativity</h4>
-                        <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem</p>
+                <li class="news__creativ news-item">
+                    <div class="news-item__icon-wrapper">
+                        <svg class="news-item__icon">
+                                <use xlink:href="sprite.svg#computer_ok"></use>
+                            </svg>
+                    </div>
+                    <div class="news-item__wrapper">
+                        <h4 class="news-item__title">Creativity</h4>
+                        <p class="news-item__text">Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem</p>
                     </div>
                 </li>
-                <li class="item-4">
-                    <div class="item-content">
-                        <h4>seo</h4>
-                        <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm</p>
+                <li class="news__seo news-item">
+                    <div class="news-item__icon-wrapper">
+                        <svg class="news-item__icon">
+                                <use xlink:href="sprite.svg#book"></use>
+                            </svg>
+                    </div>
+                    <div class="news-item__wrapper">
+                        <h4 class="news-item__title">seo</h4>
+                        <p class="news-item__text">Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm</p>
                     </div>
                 </li>
-                <li class="item-5">
-                    <div class="item-content">
-                        <h4>Css/Html</h4>
-                        <p>Lorem dolor sit amet, consectetur adipiscing elit, sed do tempo</p>
+                <li class="news__css news-item">
+                    <div class="news-item__icon-wrapper">
+                        <svg class="news-item__icon">
+                                <use xlink:href="sprite.svg#home"></use>
+                            </svg>
+                    </div>
+                    <div class="news-item__wrapper">
+                        <h4 class="news-item__title">Css/Html</h4>
+                        <p class="news-item__text">Lorem dolor sit amet, consectetur adipiscing elit, sed do tempo</p>
                     </div>
                 </li>
-                <li class="item-6">
-                    <div class="item-content">
-                        <h4>digital</h4>
-                        <p>Sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                <li class="news__digital news-item">
+                    <div class="news-item__icon-wrapper">
+                        <svg class="news-item__icon">
+                                <use xlink:href="sprite.svg#image"></use>
+                            </svg>
+                    </div>
+                    <div class="news-item__wrapper">
+                        <h4 class="news-item__title">digital</h4>
+                        <p class="news-item__text">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
                     </div>
                 </li>
             </ul>
         </article>
-        <!-- SECTION-CARD -->
-        <article>
-            <div class="services">
-                <h2>Who we are</h2>
-                <h3>MEET OUR TEAM</h3>
+        <!-- TEAM -->
+        <article class="team">
+            <div class="team__title title-item">
+                <h3 class="title-item__title">Who we are</h3>
+                <p class="title-item__mod">MEET OUR TEAM</p>
             </div>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <ul class="section-card">
-                <li class="card">
-                    <div class="wrapper">
+            <p class="team__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <ul class="team__list">
+                <li class="team__card card-item">
+                    <div class="card-item__wrapper">
                         <a href="#">
-                            <div class="buttons">
-                                <img class="img-item" src="img/img-1.jpg" alt="">
-                                <div class="gradient"></div>
-                                <div class="buttons__row">
-                                    <div class="icon">
-                                        <img src="img/facebook.png" alt="">
+                            <div class="card-item__content">
+                                <picture class="card-item__img">
+                                    <source srcset="img/img-1.jpg, img/img-1_2x.jpg 2x">
+                                    <img srcset="img/img-1.jpg" alt="man">
+                                </picture>
+                                <div class="card-item__gradient"></div>
+                                <div class="card-item__icon icon-item">
+                                    <div class="icon-item__wrapper">
+                                        <svg class="icon-item__icon">
+                                                    <use xlink:href="sprite.svg#facebook"></use>
+                                                </svg>
                                     </div>
-                                    <div class="icon">
-                                        <img src="img/twitter.png" alt="">
+                                    <div class="icon-item__wrapper">
+                                        <svg class="icon-item__icon">
+                                                    <use xlink:href="sprite.svg#twitter"></use>
+                                                </svg>
                                     </div>
-                                    <div class="icon">
-                                        <img src="img/pinterest.png" alt="">
+                                    <div class="icon-item__wrapper">
+                                        <svg class="icon-item__icon">
+                                                    <use xlink:href="sprite.svg#pinterest"></use>
+                                                </svg>
                                     </div>
-                                    <div class="icon">
-                                        <img src="img/instagram.png" alt="">
+                                    <div class="icon-item__wrapper">
+                                        <svg class="icon-item__icon">
+                                                    <use xlink:href="sprite.svg#instagram"></use>
+                                                </svg>
                                     </div>
                                 </div>
                             </div>
