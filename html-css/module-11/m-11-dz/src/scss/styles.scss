@@ -1,4 +1,32 @@
-/*
-   Import partials below
-*/
-@import 'normalize';
+// 1
+$font-stack: 'Roboto',
+sans-serif;
+// 2
+$primary-color: #424242;
+// 3
+$primary-accent-color: #03A9F4;
+// 4
+$primary-font-size: 18px;
+$primary-line-height: 1.5;
+.link {
+    text-decoration: none;
+    /* 1 */
+    font-family: $font-stack;
+    /* 2 */
+    color: $primary-color;
+    /* 3*/
+    &:hover {
+        color: $primary-accent-color;
+    }
+    /* 4 */
+    font-size: $primary-font-size;
+}
+
+@mixin font-settings($size, $height) {
+    font-size: $size;
+    line-height: $height;
+}
+
+.text {
+    @include font-settings(20px, 1.5);
+}
