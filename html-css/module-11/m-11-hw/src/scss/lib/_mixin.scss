@@ -1,0 +1,13 @@
+@mixin property-transition ($transition) {
+    transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+}
+
+@mixin property-align ($align) {
+    -webkit-box-align: $align;
+    -ms-flex-align: $align;
+    align-items: $align;
+}

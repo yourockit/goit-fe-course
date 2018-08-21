@@ -144,11 +144,7 @@ main {
     width: 380px;
     height: 470px;
     background-image: linear-gradient(90deg, $hover--bg 0%, $after--bg 100%);
-    transition: 0.2s;
-    -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -ms-transition: 0.2s;
-    -o-transition: 0.2s;
+    @include property-transition (0.2s);
 }
 
 .card-item__content {
@@ -158,20 +154,14 @@ main {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    @include property-align (center);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
     width: 380px;
     height: 470px;
-    transition: 0.2s;
-    -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -ms-transition: 0.2s;
-    -o-transition: 0.2s;
+    @include property-transition (0.2s);
 }
 
 .card-item__icon {
@@ -191,28 +181,20 @@ main {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    @include property-align (center);
     position: relative;
     width: 56px;
     height: 56px;
     background-color: $hover--bg;
     border: none;
     opacity: 0;
-    transition: 0.2s;
-    -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -ms-transition: 0.2s;
-    -o-transition: 0.2s;
+    @include property-transition (0.2s);
     &:hover {
         background-color: $after--bg;
     }
     &:hover .icon-item__icon {
         fill: $primary-font-color;
-        -webkit-transition-duration: 0.2s;
-        -o-transition-duration: 0.2s;
-        transition-duration: 0.2s;
+        @include property-transition (0.2s);
     }
 }
 
@@ -220,9 +202,7 @@ main {
     fill: $after--bg;
     width: 26px;
     height: 26px;
-    -webkit-transition-duration: 0.2s;
-    -o-transition-duration: 0.2s;
-    transition-duration: 0.2s;
+    @include property-transition (0.2s);
 }
 
 .card-item__property {
@@ -235,9 +215,7 @@ main {
     flex-direction: column;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    @include property-align (center);
     height: 45px;
 }
 

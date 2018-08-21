@@ -29,9 +29,7 @@ header {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: baseline;
-    -ms-flex-align: baseline;
-    align-items: baseline;
+    @include property-align (baseline);
     height: 100px;
     margin-bottom: 120px;
 }
@@ -50,9 +48,7 @@ header {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    @include property-align (center);
     width: 620px;
 }
 
@@ -64,16 +60,8 @@ header {
     line-height: 2.5;
     font-weight: 500;
     text-decoration: none;
-    -webkit-transition-duration: 0.2s;
-    -o-transition-duration: 0.2s;
-    transition-duration: 0.2s;
+    @include property-transition (0.2s);
     &:hover {
-        -webkit-transition-property: color;
-        -o-transition-property: color;
-        transition-property: color;
-        -webkit-transition-duration: 0.2s;
-        -o-transition-duration: 0.2s;
-        transition-duration: 0.2s;
         color: $hover--bg;
     }
     &:after {
@@ -82,11 +70,7 @@ header {
         height: 3px;
         width: 0%;
         background-color: $hover--bg;
-        transition: 0.2s;
-        -webkit-transition: 0.2s;
-        -moz-transition: 0.2s;
-        -ms-transition: 0.2s;
-        -o-transition: 0.2s;
+        @include property-transition (0.2s);
     }
     &:hover:after {
         width: 100%;
@@ -101,9 +85,7 @@ header {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    @include property-align (center);
     width: 820px;
     margin: auto;
 }
@@ -135,9 +117,7 @@ header {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    @include property-align (center);
     font-family: $main-font;
     font-size: 14px;
     color: $primary-font-color;
@@ -154,13 +134,9 @@ header {
     width: 1.2rem;
     height: 1.2rem;
     fill: $primary-font-color;
+    @include property-transition (0.2s);
     &:hover {
-        -webkit-transition-property: color;
-        -o-transition-property: color;
-        transition-property: color;
-        -webkit-transition-duration: 0.2s;
-        -o-transition-duration: 0.2s;
-        transition-duration: 0.2s;
+        transition: 0.2s;
         fill: $hover--bg;
     }
 }
