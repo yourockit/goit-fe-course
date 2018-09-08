@@ -2,23 +2,22 @@ let userInput;
 const numbers = [];
 let total = 0;
 do {
-    userInput = prompt('Введите число');
-    if (isNaN(userInput)) {
-        alert('Было введено не число, попробуйте еще раз');
-    } else if (userInput > 0) {
-        numbers.push(userInput);
+    if (userInput = prompt('Введите число')) {
+        if (userInput % 1 == 0 && userInput > 0) {
+            numbers.push(parseFloat(userInput));
+        } else {
+            alert('Было введено не число, или не целое число, попробуйте еще раз');
+        }
+    } else if (userInput == null) {
+        break;
     }
-    // else {
-    //   console.log(numbers);
-    // }
-} while (userInput !== null);
+} while (userInput);
 
-for (let i of numbers) {
-    total = total + parseInt(numbers[i]);
-    if (numbers.length !== null) {
-        alert(`Общая сумма чисел равна ${total}`);
-    } else {
-        alert('Массив пуст');
+if (numbers.length != 0) {
+    for (let i of numbers) {
+        total += i;
     }
+    alert(`Общая сумма чисел равна ${total}`);
+} else {
+    alert('Массив пуст')
 }
-console.log(total);
