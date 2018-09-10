@@ -3,15 +3,15 @@ const numbers = [];
 let total = 0;
 do {
     if (userInput = prompt('Введите число')) {
-        if (userInput % 1 == 0 && userInput > 0) {
-            numbers.push(parseFloat(userInput));
+        if (!isNaN(userInput)) {
+            numbers.push(+userInput);
         } else {
             alert('Было введено не число, или не целое число, попробуйте еще раз');
         }
     } else if (userInput == null) {
         break;
     }
-} while (userInput);
+} while (userInput !== null);
 
 if (numbers.length != 0) {
     for (let i of numbers) {
