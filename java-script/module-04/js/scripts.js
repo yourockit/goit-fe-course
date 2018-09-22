@@ -16,22 +16,19 @@ const order = {
 function Cashier(name, productDatabase) {
     this.name = name;
     this.productDatabase = productDatabase;
-    this.totalPrice = 0;
     this.customerMoney = 0;
     this.getCustomerMoney = function(value) {
         this.customerMoney = value;
     }
     this.countTotalPrice = function(order) {
+        let totalPrice = 0;
         for (let key in order) {
-            this.totalPrice += order[key] * productDatabase[key];
+            totalPrice += order[key] * productDatabase[key];
         }
+        return totalPrice;
     }
-    this.countChange = function(totalPrice) {
-        if (this.customerMoney >= this.totalPrice) {
-            return this.change = this.customerMoney - this.totalPrice;
-        } else {
-            return null;
-        }
+    this.countChange = function() {
+        return (this.customerMoney >= totalPrice) ? this.customerMoney - totalPrice : null;
     }
     this.onSuccess = function(change) {
         console.log(`Спасибо за покупку, ваша сдача ${change}!`);
@@ -56,7 +53,7 @@ console.log(mango.customerMoney); // 0
 const totalPrice = mango.countTotalPrice(order);
 
 // Проверям что посчитали
-console.log(mango.totalPrice); // 110
+console.log(totalPrice); // 110
 
 // Вызываем getCustomerMoney для запроса денег покупателя
 mango.getCustomerMoney(300);
