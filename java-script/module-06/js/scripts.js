@@ -25,9 +25,8 @@ class Hamburger {
      * @param {String} topping - Тип добавки
      */
     removeTopping(topping) {
-        if (this._toppings.includes(topping)) {
-            this._toppings = this._toppings.filter(element => element !== topping);
-        }
+        this._toppings = this._toppings.filter(element => element !== topping);
+        return this._toppings;
     }
 
     /**
