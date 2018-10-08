@@ -37,9 +37,7 @@ class Hamburger {
      * Попробуйте сделать это геттером чтобы можно было обращаться как obj.toppings и нам вернет массив добавок
      */
     get getToppings() {
-        if (this._toppings.length > 0) {
-            return this._toppings;
-        }
+        return this._toppings;
     }
 
     /**
@@ -69,33 +67,9 @@ class Hamburger {
      * Попробуйте сделать это геттером чтобы можно было обращаться как obj.price и нам вернет сумму.
      */
     calculatePrice() {
-        let price = 0;
-
-        if (this._size === Hamburger.SIZE_LARGE) {
-            price = 50;
-        } else if (this._size === Hamburger.SIZE_SMALL) {
-            price = 30;
-        }
-
-        switch (this._stuffing) {
-            case Hamburger.STUFFING_CHEESE:
-                price += 15;
-                break;
-            case Hamburger.STUFFING_SALAD:
-                price += 20;
-                break;
-            case Hamburger.STUFFING_MEAT:
-                price += 35;
-        }
-
-        if (this._toppings.indexOf(Hamburger.TOPPING_SAUCE) >= 0) {
-            price += 15;
-        }
-        if (this._toppings.indexOf(Hamburger.TOPPING_SPICE) >= 0) {
-            price += 10;
-        }
-
-        return price;
+        let priceToppings = this._toppings.map(item => Hamburger.TOPPINGS[item].price);
+        let sumPrice = Hamburger.SIZES[this._size].price + Hamburger.STUFFINGS[this._stuffing].price + priceToppings.reduce((acc, item) => acc + item, 0);
+        return sumPrice;
     }
 
     /**
@@ -105,30 +79,8 @@ class Hamburger {
      * Попробуйте сделать это геттером чтобы можно было обращаться как obj.calories и нам вернет сумму.
      */
     calculateCalories() {
-        let calories = 0;
-
-        if (this._size === Hamburger.SIZE_LARGE) {
-            calories = 100;
-        } else if (this._size === Hamburger.SIZE_SMALL) {
-            calories = 50;
-        }
-
-        switch (this._stuffing) {
-            case Hamburger.STUFFING_CHEESE:
-                calories += 20;
-                break;
-            case Hamburger.STUFFING_SALAD:
-                calories += 5;
-                break;
-            case Hamburger.STUFFING_MEAT:
-                calories += 15;
-        }
-
-        if (this._toppings.indexOf(Hamburger.TOPPING_SAUCE) >= 0) {
-            calories += 5;
-        }
-
-        return calories
+        let sumCalories = Hamburger.SIZES[this._size].calories + Hamburger.STUFFINGS[this._stuffing].calories + Hamburger.TOPPINGS[this._toppings].calories;
+        return sumCalories
     }
 }
 
@@ -208,6 +160,7 @@ console.log("Is hamburger large: ", hamburger.getSize === Hamburger.SIZE_LARGE);
 
 // Убрать добавку
 hamburger.removeTopping(Hamburger.TOPPING_SPICE);
+
 
 // Смотрим сколько добавок
 console.log("Hamburger has %d toppings", hamburger.getToppings.length); // 1
