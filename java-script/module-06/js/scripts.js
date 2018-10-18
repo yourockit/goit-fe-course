@@ -25,9 +25,8 @@ class Hamburger {
      * @param {String} topping - Тип добавки
      */
     removeTopping(topping) {
-        if (this._toppings.includes(topping)) {
-            this._toppings = this._toppings.filter(element => element !== topping);
-        }
+        this._toppings = this._toppings.filter(element => element !== topping);
+        return this._toppings;
     }
 
     /**
@@ -67,8 +66,7 @@ class Hamburger {
      * Попробуйте сделать это геттером чтобы можно было обращаться как obj.price и нам вернет сумму.
      */
     calculatePrice() {
-        let priceToppings = this._toppings.map(item => Hamburger.TOPPINGS[item].price);
-        let sumPrice = Hamburger.SIZES[this._size].price + Hamburger.STUFFINGS[this._stuffing].price + priceToppings.reduce((acc, item) => acc + item, 0);
+        let sumPrice = Hamburger.SIZES[this._size].price + Hamburger.STUFFINGS[this._stuffing].price + this._toppings.reduce((acc, item) => acc + Hamburger.TOPPINGS[item].price, 0);
         return sumPrice;
     }
 
@@ -79,7 +77,7 @@ class Hamburger {
      * Попробуйте сделать это геттером чтобы можно было обращаться как obj.calories и нам вернет сумму.
      */
     calculateCalories() {
-        let sumCalories = Hamburger.SIZES[this._size].calories + Hamburger.STUFFINGS[this._stuffing].calories + Hamburger.TOPPINGS[this._toppings].calories;
+        let sumCalories = Hamburger.SIZES[this._size].calories + Hamburger.STUFFINGS[this._stuffing].calories + this._toppings.reduce((acc, item) => acc + Hamburger.TOPPINGS[this._toppings].calories, 0);
         return sumCalories
     }
 }
