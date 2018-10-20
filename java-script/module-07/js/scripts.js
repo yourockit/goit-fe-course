@@ -64,13 +64,14 @@ function createPostCard({
 
     const mainButton = document.createElement("button");
     mainButton.classList.add("button");
+    mainButton.setAttribute("href", link)
     mainButton.style.position = ("relative");
     mainButton.style.display = ("inline-block");
     mainButton.style.border = ("none");
     mainButton.style.borderRadius = ("3px");
     mainButton.style.padding = ("0 1.5em");
     mainButton.style.verticalAlign = ("top");
-    mainButton.textContent = link;
+    mainButton.textContent = "Read more";
 
     mainButton.style.fontSize = ("15px");
     mainButton.style.lineHeight = ("2.8");
