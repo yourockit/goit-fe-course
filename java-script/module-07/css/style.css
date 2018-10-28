@@ -26,6 +26,7 @@ img {
     border-radius: 2px;
     color: #212121;
     margin: 0 auto;
+    list-style: none;
 }
 
 .post__image {
