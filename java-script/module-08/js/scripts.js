@@ -6,3 +6,59 @@ const galleryItems = [
     { preview: 'img/preview-5.jpeg', fullview: 'img/fullview-5.jpeg', alt: "alt text 5" },
     { preview: 'img/preview-6.jpeg', fullview: 'img/fullview-6.jpeg', alt: "alt text 6" },
 ];
+
+function createGallery(itemsGallery) {
+    const imageGallery = document.querySelector(".js-image-gallery");
+    const fullview = document.createElement("div");
+    fullview.classList.add("fullview");
+    const fullvewElement = document.createElement("img");
+    fullvewElement.setAttribute("src", itemsGallery[0].fullview);
+    fullvewElement.setAttribute("alt", itemsGallery[0].alt);
+    fullview.appendChild(fullvewElement);
+    const preview = document.createElement("ul");
+    preview.classList.add("preview");
+    imageGallery.append(fullview, preview);
+
+    const imgArray = [];
+
+    itemsGallery.forEach(elem => {
+        const img = createLiImgEl(elem);
+        img.addEventListener("click", clickListener);
+    });
+
+    function clickListener(event) {
+        const dataAtr = event.target.getAttribute("dataFullview");
+        const altAtr = event.target.getAttribute("alt");
+        fullview.firstElementChild.setAttribute("src", dataAtr);
+        fullview.firstElementChild.setAttribute("alt", altAtr);
+
+        switchable();
+    }
+
+    function switchable() {
+        imgArray.forEach(target => {
+            if (target !== event.target) {
+                target.classList.remove("active");
+            } else {
+                target.classList.add("active");
+            }
+        });
+    }
+
+    function createLiImgEl(elem) {
+        const liElement = document.createElement("li");
+        preview.append(liElement);
+        const imgElement = document.createElement("img");
+        liElement.appendChild(imgElement).setAttribute("src", elem.preview);
+        imgElement.setAttribute("dataFullview", elem.fullview);
+        imgElement.setAttribute("alt", elem.alt);
+        if (imgElement.getAttribute("alt") === "alt text 1") {
+            imgElement.classList.add("active");
+        }
+        imgArray.push(imgElement);
+        return imgElement;
+    }
+}
+
+
+createGallery(galleryItems);
