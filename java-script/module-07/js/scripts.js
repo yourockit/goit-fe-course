@@ -52,13 +52,12 @@ function createPostCard({
 
     return mainWrap;
 
-    mainWrap.append(mainLi);
+    // mainWrap.append(mainLi);
 };
 
 
 const createCards = posts => {
     posts.map(item => createPostCard(item));
-
 };
 
 createCards(posts);
