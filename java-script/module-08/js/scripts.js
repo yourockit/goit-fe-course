@@ -11,10 +11,10 @@ function createGallery(itemsGallery) {
     const imageGallery = document.querySelector(".js-image-gallery");
     const fullview = document.createElement("div");
     fullview.classList.add("fullview");
-    const fullvewElement = document.createElement("img");
-    fullvewElement.setAttribute("src", itemsGallery[0].fullview);
-    fullvewElement.setAttribute("alt", itemsGallery[0].alt);
-    fullview.appendChild(fullvewElement);
+    const fullviewElement = document.createElement("img");
+    fullviewElement.setAttribute("src", itemsGallery[0].fullview);
+    fullviewElement.setAttribute("alt", itemsGallery[0].alt);
+    fullview.appendChild(fullviewElement);
     const preview = document.createElement("ul");
     preview.classList.add("preview");
     imageGallery.append(fullview, preview);
@@ -27,22 +27,24 @@ function createGallery(itemsGallery) {
     });
 
     function clickListener(event) {
-        const dataAtr = event.target.getAttribute("dataFullview");
+        const dataAtr = event.target.getAttribute("data-fullview");
         const altAtr = event.target.getAttribute("alt");
         fullview.firstElementChild.setAttribute("src", dataAtr);
         fullview.firstElementChild.setAttribute("alt", altAtr);
 
-        switchable();
+        const target = event.target;
+
+        setActiveLink(target);
     }
 
-    function switchable() {
-        imgArray.forEach(target => {
-            if (target !== event.target) {
-                target.classList.remove("active");
-            } else {
-                target.classList.add("active");
-            }
-        });
+    function setActiveLink(nextTarget) {
+        const currentTarget = preview.querySelector("img.active");
+
+        if (currentTarget) {
+            currentTarget.classList.remove("active");
+        }
+
+        nextTarget.classList.add("active");
     }
 
     function createLiImgEl(elem) {
@@ -50,7 +52,7 @@ function createGallery(itemsGallery) {
         preview.append(liElement);
         const imgElement = document.createElement("img");
         liElement.appendChild(imgElement).setAttribute("src", elem.preview);
-        imgElement.setAttribute("dataFullview", elem.fullview);
+        imgElement.setAttribute("data-fullview", elem.fullview);
         imgElement.setAttribute("alt", elem.alt);
         if (imgElement.getAttribute("alt") === "alt text 1") {
             imgElement.classList.add("active");
