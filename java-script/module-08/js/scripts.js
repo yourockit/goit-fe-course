@@ -19,8 +19,6 @@ function createGallery(itemsGallery) {
     preview.classList.add("preview");
     imageGallery.append(fullview, preview);
 
-    const imgArray = [];
-
     itemsGallery.forEach(elem => {
         const img = createLiImgEl(elem);
         img.addEventListener("click", clickListener);
@@ -49,17 +47,21 @@ function createGallery(itemsGallery) {
 
     function createLiImgEl(elem) {
         const liElement = document.createElement("li");
-        preview.append(liElement);
         const imgElement = document.createElement("img");
-        liElement.appendChild(imgElement).setAttribute("src", elem.preview);
+        imgElement.setAttribute("src", elem.preview);
         imgElement.setAttribute("data-fullview", elem.fullview);
         imgElement.setAttribute("alt", elem.alt);
+        liElement.append(imgElement);
         if (imgElement.getAttribute("alt") === "alt text 1") {
             imgElement.classList.add("active");
         }
-        imgArray.push(imgElement);
-        return imgElement;
+        return liElement;
     }
+
+    const createElem = galleryItems => galleryItems.map(item => createLiImgEl(item));
+
+    const elementLi = createElem(galleryItems);
+    preview.append(...elementLi);
 }
 
 
