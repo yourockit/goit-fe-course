@@ -10,6 +10,7 @@ let count = 0;
 const timer = {
     timerId: null,
     isActive: false,
+    zeroTime: 0,
     startTime() {
         if (!this.isActive) {
             this.isActive = true;
@@ -38,23 +39,30 @@ const timer = {
         }
     },
     resetTime() {
-        clearInterval(this.timerId);
         this.isActive = false;
-        count = 0;
+        clearInterval(this.timerId);
+        this.count = 0;
         miliseconds = 0;
         seconds = 0;
         minutes = 0;
         clockFace.textContent = `0${minutes}:0${seconds}.${miliseconds}`
         btnStart.textContent = "Start";
+        btnStart.classList.remove('active');
+        lapsUl.textContent = " ";
+        // setActiveBtn(this);
     },
     takeLap() {
         lapsArray.push(clockFace.textContent);
         const li = document.createElement("li");
         li.append(clockFace.textContent);
         lapsUl.append(li);
+        console.log(lapsArray);
     }
 }
 
 btnStart.addEventListener("click", timer.startTime);
 btnReset.addEventListener("click", timer.resetTime);
-btnLap.addEventListener("click", timer.takeLap)
+btnLap.addEventListener("click", timer.takeLap);
+
+
+https: //github.com/SergioKhodchenko/JavaScript/blob/master/module_09/script.js
