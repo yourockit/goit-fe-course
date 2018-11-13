@@ -1,3 +1,5 @@
+"use strict";
+
 const clockFace = document.querySelector(".js-time");
 const btnStart = document.querySelector(".js-start");
 const btnLap = document.querySelector(".js-take-lap");
@@ -7,10 +9,13 @@ const lapsArray = [];
 
 let count = 0;
 
+let miliseconds = 0;
+let seconds = 0;
+let minutes = 0;
+
 const timer = {
     timerId: null,
     isActive: false,
-    zeroTime: 0,
     startTime() {
         if (!this.isActive) {
             this.isActive = true;
@@ -19,7 +24,6 @@ const timer = {
                 miliseconds = count;
                 seconds = Math.floor(count / 10);
                 minutes = Math.floor(count / 10 / 60);
-
 
                 miliseconds = miliseconds % 10;
                 seconds = seconds % 60;
@@ -39,17 +43,17 @@ const timer = {
         }
     },
     resetTime() {
-        this.isActive = false;
-        clearInterval(this.timerId);
-        this.count = 0;
-        miliseconds = 0;
-        seconds = 0;
-        minutes = 0;
-        clockFace.textContent = `0${minutes}:0${seconds}.${miliseconds}`
-        btnStart.textContent = "Start";
-        btnStart.classList.remove('active');
-        lapsUl.textContent = " ";
-        // setActiveBtn(this);
+        if (this.isActive) {
+            this.isActive = false;
+            clearInterval(this.timerId);
+            this.count = 0;
+            miliseconds = 0;
+            seconds = 0;
+            minutes = 0;
+            clockFace.textContent = `0${minutes}:0${seconds}.${miliseconds}`;
+            btnStart.textContent = "Start";
+            lapsUl.textContent = " ";
+        }
     },
     takeLap() {
         lapsArray.push(clockFace.textContent);
@@ -64,5 +68,4 @@ btnStart.addEventListener("click", timer.startTime);
 btnReset.addEventListener("click", timer.resetTime);
 btnLap.addEventListener("click", timer.takeLap);
 
-
-https: //github.com/SergioKhodchenko/JavaScript/blob/master/module_09/script.js
+// // https: //github.com/SergioKhodchenko/JavaScript/blob/master/module_09/script.js
