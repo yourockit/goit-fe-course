@@ -57,6 +57,7 @@ const timer = {
         } else {
             lapsArray.length = 0;
             lapsUl.textContent = " ";
+            btnStart.textContent = "Start";
         }
     }
 }
