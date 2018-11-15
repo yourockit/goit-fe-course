@@ -18,17 +18,16 @@ const posts = [{
     }
 ];
 
+const root = document.querySelector(".root");
+
 function createPostCard({
     img = "#",
     title = "title",
     text = "text",
     link = "link"
 }) {
-    const mainWrap = document.querySelector("ul");
-    mainWrap.classList.add("wrap");
-
-    const mainLi = document.createElement("li");
-    mainLi.classList.add("post");
+    const mainDiv = document.createElement("div");
+    mainDiv.classList.add("post");
 
     const mainImg = document.createElement("img");
     mainImg.classList.add("post__image");
@@ -48,16 +47,24 @@ function createPostCard({
     mainButton.setAttribute("href", link)
     mainButton.textContent = "Read more";
 
-    mainLi.append(mainImg, mainTitle, mainContent, mainButton);
+    mainDiv.append(mainImg, mainTitle, mainContent, mainButton);
 
-    return mainWrap;
-
+<<<<<<< HEAD
     // mainWrap.append(mainLi);
+=======
+    return mainDiv;
+>>>>>>> bb53e2e835e6c3e6d59ac1cb58a1e76bf2b0e7fb
 };
 
+const createCards = posts => posts.map(item => createPostCard(item));
 
+<<<<<<< HEAD
 const createCards = posts => {
     posts.map(item => createPostCard(item));
 };
 
 createCards(posts);
+=======
+const list = createCards(posts);
+root.append(...list);
+>>>>>>> bb53e2e835e6c3e6d59ac1cb58a1e76bf2b0e7fb

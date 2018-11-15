@@ -7,19 +7,78 @@ const galleryItems = [
     { preview: 'img/preview-6.jpeg', fullview: 'img/fullview-6.jpeg', alt: "alt text 6" },
 ];
 
-function createGallery() {
-    const imageGallery = document.querySelector("js-image- gallery");
-
-    const fullView = document.createElement("div");
-    fullView.classList.add("fullview");
-
-    const fullViewImg = dociment.createElement("img");
-    fullViewImg.setAttribute("srs");
-    fullViewImg.setAttribute("alt");
-    fullview.append(fullViewImg);
-
-    const preview = document.createElement("ul")
+function createGallery(itemsGallery) {
+    const imageGallery = document.querySelector(".js-image-gallery");
+    const fullview = document.createElement("div");
+    fullview.classList.add("fullview");
+    const fullviewElement = document.createElement("img");
+    fullviewElement.setAttribute("src", itemsGallery[0].fullview);
+    fullviewElement.setAttribute("alt", itemsGallery[0].alt);
+    fullview.appendChild(fullviewElement);
+    const preview = document.createElement("ul");
     preview.classList.add("preview");
-    imageGallery.append(fullView, preview);
+    imageGallery.append(fullview, preview);
 
+    // const imgArray = [];
+
+    itemsGallery.forEach(elem => {
+        const img = createLiImgEl(elem);
+        img.addEventListener("click", clickListener);
+    });
+
+    function clickListener(event) {
+        const dataAtr = event.target.getAttribute("data-fullview");
+        const altAtr = event.target.getAttribute("alt");
+        fullview.firstElementChild.setAttribute("src", dataAtr);
+        fullview.firstElementChild.setAttribute("alt", altAtr);
+
+        const target = event.target;
+
+        setActiveLink(target);
+    }
+
+    function setActiveLink(nextTarget) {
+        const currentTarget = preview.querySelector("img.active");
+
+        if (currentTarget) {
+            currentTarget.classList.remove("active");
+        }
+
+        nextTarget.classList.add("active");
+    }
+
+    // function createLiImgEl(elem) {
+    //     const liElement = document.createElement("li");
+    //     // preview.append(liElement);
+    //     const imgElement = document.createElement("img");
+    //     liElement.appendChild(imgElement).setAttribute("src", elem.preview);
+    //     imgElement.setAttribute("data-fullview", elem.fullview);
+    //     imgElement.setAttribute("alt", elem.alt);
+    //     if (imgElement.getAttribute("alt") === "alt text 1") {
+    //         imgElement.classList.add("active");
+    //     }
+    //     // imgArray.push(imgElement);
+    //     return imgElement;
+    // }
+
+    function createLiImgEl(elem) {
+        const liElement = document.createElement("li");
+        const imgElement = document.createElement("img");
+        liElement.appendChild(imgElement);
+        imgElement.setAttribute("src", elem.preview);
+        imgElement.setAttribute("data-fullview", elem.fullview);
+        imgElement.setAttribute("alt", elem.alt);
+        if (imgElement.getAttribute("alt") === "alt text 1") {
+            imgElement.classList.add("active");
+        }
+        return liElement;
+    }
+
+    const createElem = galleryItems => galleryItems.map(item => createLiImgEl(item));
+
+    const createElLi = createElem(galleryItems);
+    preview.append(...createElLi);
 }
+
+
+createGallery(galleryItems);
