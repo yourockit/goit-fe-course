@@ -58,6 +58,10 @@ const timer = {
             lapsArray.length = 0;
             lapsUl.textContent = " ";
             btnStart.textContent = "Start";
+            miliseconds = 0;
+            seconds = 0;
+            minutes = 0;
+            clockFace.textContent = `0${minutes}:0${seconds}.${miliseconds}`;
         }
     }
 }
