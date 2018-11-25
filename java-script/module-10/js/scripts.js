@@ -1,47 +1,43 @@
 const inputId = document.querySelector("#id");
 const inputName = document.querySelector("#name");
 const inputAge = document.querySelector("#age");
-const inputUpdateId = document.querySelector("#update-id");
-const inputUpdateName = document.querySelector("#update-name");
-const inputUpdateAge = document.querySelector("#update-age");
 const btnGetAll = document.querySelector(".get-all");
-const btnGetById = document.querySelector(".find-user");
-const btnDeleteById = document.querySelector(".delete-user");
 const btnAddUser = document.querySelector(".add-user");
-const btnUpdUser = document.querySelector(".update-user");
+const btnGetById = document.querySelector(".find-user");
+const btnRemuveUser = document.querySelector(".delete-user");
+const btnUpdateUser = document.querySelector(".update-user");
 const apiUrl = "https://test-users-api.herokuapp.com/users/";
 const table = document.querySelector("table");
 const tBody = document.querySelector("table > tbody");
 const btnClearTable = document.querySelector(".clear-table");
 
 btnGetAll.addEventListener("click", getAllUsers);
-btnGetById.addEventListener("click", getUserById);
-btnDeleteById.addEventListener("click", removeUser);
 btnAddUser.addEventListener("click", addUser);
-btnUpdUser.addEventListener("click", updateUser);
-btnClearTable.addEventListener("click", () => table.setAttribute('hidden', true));
+btnGetById.addEventListener("click", getUserById);
+btnRemuveUser.addEventListener("click", removeUser);
+btnUpdateUser.addEventListener("click", updateUser);
 
-//-----BEGIN getAllUsers function----------
 function getAllUsers() {
     fetch(apiUrl)
         .then(responseHandle)
         .then(allUsersDataHandle)
         .catch(error => {
-            console.log("Error:", error);
+            console.log("error")
         });
-    table.removeAttribute('hidden');
-};
+    table.removeAttribute("hidden");
+    inputName.value = "";
+    inputAge.value = "";
+    inputId.value = "";
+
+}
 
 function responseHandle(response) {
     if (response.ok) { return response.json() };
-    throw new Error("Error fetching data", response.statusText, response.status);
 };
 
 function allUsersDataHandle(obj) {
-    const htmlString = obj.data.reduce(
-        (acc, user) => acc + createAllUsersTableRow(user),
-        ""
-    );
+    const htmlString = obj.data.reduce((acc, user) => acc + createAllUsersTableRow(user),
+        "");
     tBody.innerHTML = htmlString;
 };
 
@@ -51,25 +47,25 @@ function createAllUsersTableRow({ name, id, age }) {
          <td>${name}</td>
          <td>${id}</td>
          <td>${age}</td>
-       </tr>
-    `;
+    </tr>`;
 };
-//-----END getAllUsers function----------
 
-//-----BEGIN getUserById function----------
 function getUserById(evt) {
     evt.preventDefault();
-    if (!table.hasAttribute('hidden')) {
-        table.setAttribute('hidden', true);
-    };
     const fullApiUrl = apiUrl + inputId.value;
-    fetch(fullApiUrl)
-        .then(responseHandle)
-        .then(findUserDataHandle)
-        .catch(error => {
-            console.log("Error:", error);
-        });
-    table.removeAttribute('hidden');
+    if (inputId.value != "") {
+        fetch(fullApiUrl)
+            .then(responseHandle)
+            .then(findUserDataHandle)
+            .catch(error => {
+                alert("Пользователь с таким ID не найден");
+            });
+    } else {
+        alert("Введите ID пользователя")
+    }
+    table.removeAttribute("hidden");
+    inputName.value = "";
+    inputAge.value = "";
 }
 
 function findUserDataHandle(obj) {
@@ -78,83 +74,78 @@ function findUserDataHandle(obj) {
          <td>${obj.data.name}</td>
          <td>${obj.data.id}</td>
          <td>${obj.data.age}</td>
-       </tr>
-    `;
+    </tr>`;
 };
-//-----END getUserById function----------
 
-//-----BEGIN removeUser function----------
 function removeUser(evt) {
     evt.preventDefault();
-    if (confirm('Are you sure, you want to remove this user from database?')) {
-        if (!table.hasAttribute('hidden')) {
-            table.setAttribute('hidden', true);
-        };
-        const fullApiUrl = apiUrl + inputId.value;
-        fetch(fullApiUrl, { method: 'DELETE' })
+    const fullApiUrl = apiUrl + inputId.value;
+    if (inputId.value != "") {
+        fetch(fullApiUrl, { method: "DELETE" })
             .then(() => {
                 getAllUsers();
-                alert('User successfully removed from database.')
+                alert("Пользователь успешно удален")
             })
             .catch(error => {
-                console.log("Error:", error);
+                alert("Пользователь с таким ID не найден");
             });
+    } else {
+        alert("Введите ID пользователя")
     }
 }
-//-----END removeUser function----------
 
-//-----BEGIN addUser function----------
 function addUser(evt) {
     evt.preventDefault();
-    if (confirm(`Are you sure, you want add user "${inputName.value}" to database?`)) {
-        if (!table.hasAttribute('hidden')) {
-            table.setAttribute('hidden', true);
-        };
+    if (inputName.value != "" & inputAge.value != "") {
         fetch(apiUrl, {
-                method: 'POST',
+                method: "POST",
                 body: JSON.stringify({ name: inputName.value, age: inputAge.value }),
                 headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json'
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
                 }
             })
             .then(() => {
                 getAllUsers();
-                alert(`User "${inputName.value}" successfully added to database.`)
+                alert(`Пользователь успешно добавлен`)
             })
             .catch(error => {
-                console.log("Error:", error);
+                console.log("error");
             });
+    } else {
+        alert("Неверно указаны данные")
     }
-}
-//-----END addUser function----------
+    inputName.value = "";
+    inputAge.value = "";
+    inputId.value = "";
+};
 
-//-----BEGIN updateUser function----------
 function updateUser(evt) {
     evt.preventDefault();
-    if (confirm(`Are you sure, you want update this user's info?`)) {
-        if (!table.hasAttribute('hidden')) {
-            table.setAttribute('hidden', true);
-        };
-        const fullApiUrl = apiUrl + inputUpdateId.value;
+    const fullApiUrl = apiUrl + inputId.value;
+    if (inputName.value != "" & inputAge.value != "" & inputId.value != "") {
         fetch(fullApiUrl, {
-                method: 'PUT',
-                body: JSON.stringify({ name: inputUpdateName.value, age: inputUpdateAge.value }),
+                method: "PUT",
+                body: JSON.stringify({ name: inputName.value, age: inputAge.value }),
                 headers: {
-                    'Content-Type': 'application/json; charset=UTF-8'
+                    "Content-Type": "application/json; charset=UTF-8"
                 }
             })
             .then(updateUserResponseHandle)
             .catch(error => {
-                console.log("Error:", error);
+                console.log("error");
             });
+    } else {
+        alert("Неверно указаны данные")
     }
+    inputName.value = "";
+    inputAge.value = "";
+    inputId.value = "";
 };
 
 function updateUserResponseHandle(response) {
     if (response.ok) {
-        alert(`User "${inputUpdateName.value}" successfully updated.`);
+        alert("Данные пользователя успешно обновлены");
         getAllUsers()
     }
-    throw new Error("Error fetching data", response.statusText, response.status);
 };
