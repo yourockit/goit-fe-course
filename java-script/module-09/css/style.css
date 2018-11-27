@@ -1,0 +1,39 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 270x;
+    margin-bottom: 15px;
+}
+
+.time {
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+}
+
+.btn {
+    width: 90px;
+    height: 40px;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+}
