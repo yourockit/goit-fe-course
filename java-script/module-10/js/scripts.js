@@ -54,9 +54,9 @@ function getUserById(evt) {
     evt.preventDefault();
     const fullApiUrl = apiUrl + inputId.value;
     if (inputId.value != "") {
-        inputId.removeAttribute("required", "required");
-        inputName.removeAttribute("required", "required");
-        inputAge.removeAttribute("required", "required");
+        inputId.removeAttribute("required", required = "required");
+        inputName.removeAttribute("required", required = "required");
+        inputAge.removeAttribute("required", required = "required");
         fetch(fullApiUrl)
             .then(responseHandle)
             .then(findUserDataHandle)
@@ -64,9 +64,9 @@ function getUserById(evt) {
                 alert("Пользователь с таким ID не найден");
             });
     } else {
-        inputName.removeAttribute("required", "required");
-        inputAge.removeAttribute("required", "required");
-        inputId.setAttribute("required", "required");
+        inputName.removeAttribute("required", required = "required");
+        inputAge.removeAttribute("required", required = "required");
+        inputId.setAttribute("required", required = "required");
         alert("Введите ID пользователя")
     }
     inputName.value = "";
@@ -86,9 +86,9 @@ function removeUser(evt) {
     evt.preventDefault();
     const fullApiUrl = apiUrl + inputId.value;
     if (inputId.value != "") {
-        inputId.removeAttribute("required", "required");
-        inputName.removeAttribute("required", "required");
-        inputAge.removeAttribute("required", "required");
+        inputId.removeAttribute("required", required = "required");
+        inputName.removeAttribute("required", required = "required");
+        inputAge.removeAttribute("required", required = "required");
         fetch(fullApiUrl, { method: "DELETE" })
             .then(() => {
                 getAllUsers();
@@ -98,9 +98,9 @@ function removeUser(evt) {
                 alert("Пользователь с таким ID не найден");
             });
     } else {
-        inputName.removeAttribute("required", "required");
-        inputAge.removeAttribute("required", "required");
-        inputId.setAttribute("required", "required");
+        inputName.removeAttribute("required", required = "required");
+        inputAge.removeAttribute("required", required = "required");
+        inputId.setAttribute("required", required = "required");
         alert("Введите ID пользователя")
     }
 }
@@ -108,9 +108,9 @@ function removeUser(evt) {
 function addUser(evt) {
     evt.preventDefault();
     if (inputName.value != "" & inputAge.value != "") {
-        inputId.removeAttribute("required", "required");
-        inputName.removeAttribute("required", "required");
-        inputAge.removeAttribute("required", "required");
+        inputId.removeAttribute("required", required = "required");
+        inputName.removeAttribute("required", required = "required");
+        inputAge.removeAttribute("required", required = "required");
         fetch(apiUrl, {
                 method: "POST",
                 body: JSON.stringify({ name: inputName.value, age: inputAge.value }),
@@ -127,9 +127,9 @@ function addUser(evt) {
                 console.log("error");
             });
     } else {
-        inputId.removeAttribute("required", "required");
-        inputName.setAttribute("required", "required")
-        inputAge.setAttribute("required", "required")
+        inputId.removeAttribute("required", required = "required");
+        inputName.setAttribute("required", required = "required");
+        inputAge.setAttribute("required", required = "required");
         alert("Неверно указаны данные")
     }
     inputName.value = "";
@@ -141,9 +141,9 @@ function updateUser(evt) {
     evt.preventDefault();
     const fullApiUrl = apiUrl + inputId.value;
     if (inputName.value != "" & inputAge.value != "" & inputId.value != "") {
-        inputName.removeAttribute("required", "required");
-        inputAge.removeAttribute("required", "required");
-        inputId.removeAttribute("required", "required");
+        inputName.removeAttribute("required", required = "required");
+        inputAge.removeAttribute("required", required = "required");
+        inputId.removeAttribute("required", required = "required");
         fetch(fullApiUrl, {
                 method: "PUT",
                 body: JSON.stringify({ name: inputName.value, age: inputAge.value }),
@@ -156,9 +156,9 @@ function updateUser(evt) {
                 console.log("error");
             });
     } else {
-        inputId.removeAttribute("required", "required");
-        inputName.setAttribute("required", "required");
-        inputAge.setAttribute("required", "required");
+        inputId.removeAttribute("required", required = "required");
+        inputName.setAttribute("required", required = "required");
+        inputAge.setAttribute("required", required = "required");
         alert("Неверно указаны данные")
     }
     inputName.value = "";
