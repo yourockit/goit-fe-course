@@ -1,5 +1,3 @@
-"use strict";
-
 const clockFace = document.querySelector(".js-time");
 const btnStart = document.querySelector(".js-start");
 const btnLap = document.querySelector(".js-take-lap");
@@ -8,10 +6,6 @@ const lapsUl = document.querySelector(".js-laps");
 const lapsArray = [];
 
 let count = 0;
-
-let miliseconds = 0;
-let seconds = 0;
-let minutes = 0;
 
 const timer = {
     timerId: null,
@@ -42,6 +36,12 @@ const timer = {
             btnStart.textContent = "Continue";
         }
     },
+    takeLap() {
+        lapsArray.push(clockFace.textContent);
+        const li = document.createElement("li");
+        li.append(clockFace.textContent);
+        lapsUl.append(li);
+    },
     resetTime() {
         if (this.isActive) {
             this.isActive = false;
@@ -52,18 +52,26 @@ const timer = {
             minutes = 0;
             clockFace.textContent = `0${minutes}:0${seconds}.${miliseconds}`;
             btnStart.textContent = "Start";
+            lapsArray.length = 0;
             lapsUl.textContent = " ";
+        } else {
+            lapsArray.length = 0;
+            lapsUl.textContent = " ";
+            btnStart.textContent = "Start";
+            miliseconds = 0;
+            seconds = 0;
+            minutes = 0;
+            clockFace.textContent = `0${minutes}:0${seconds}.${miliseconds}`;
         }
-    },
-    takeLap() {
-        lapsArray.push(clockFace.textContent);
-        const li = document.createElement("li");
-        li.append(clockFace.textContent);
-        lapsUl.append(li);
-        console.log(lapsArray);
     }
 }
 
+<<<<<<< HEAD
 btnStart.addEventListener("click", timer.startTime);
 btnReset.addEventListener("click", timer.resetTime);
 btnLap.addEventListener("click", timer.takeLap);
+=======
+btnStart.addEventListener("click", timer.startTime.bind(timer));
+btnReset.addEventListener("click", timer.resetTime.bind(timer));
+btnLap.addEventListener("click", timer.takeLap.bind(timer));
+>>>>>>> dcfc84127df4b9e7a94353c5831096c986d417fd

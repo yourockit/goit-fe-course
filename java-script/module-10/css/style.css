@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.item__form {
+    display: flex;
+    flex-direction: column;
+    min-width: 520px;
+    margin: 0 0 20px;
+}
+
+.form__input,
+.form__btn {
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+}
+
+input {
+    width: 200px;
+    height: 40px;
+    border: 2px solid rgb(122, 122, 122);
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+#age {
+    width: 50px;
+    -moz-appearance: textfield;
+    text-align: center;
+}
+
+.item__btn {
+    background-color: rgb(122, 122, 122);
+    border: 0;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    height: 44px;
+    cursor: pointer;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.item__btn:hover {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.514);
+}
+
+.item__btn:active {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.514);
+}
+
+table {
+    width: 520px;
+    border: 1px solid rgb(122, 122, 122);
+    border-radius: 3px;
+    border-spacing: 0;
+}
+
+th {
+    background-color: rgb(122, 122, 122);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(122, 122, 122);
+}
+
+td {
+    border: 1px solid rgb(122, 122, 122);
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
