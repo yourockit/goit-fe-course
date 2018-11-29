@@ -24,7 +24,7 @@ function getAllUsers() {
         .catch(error => {
             console.log("error")
         });
-    table.removeAttribute("hidden");
+    tBody.removeAttribute("hidden");
     inputName.value = "";
     inputAge.value = "";
     inputId.value = "";
@@ -54,6 +54,9 @@ function createAllUsersTableRow({ name, id, age }) {
 
 function getUserById(evt) {
     evt.preventDefault();
+    if (tBody.hasAttribute("hidden")) {
+        tBody.removeAttribute("hidden", true);
+    };
     const fullApiUrl = apiUrl + inputId.value;
     if (inputId.value != "") {
         inputId.removeAttribute("required", required = "required");
@@ -87,6 +90,9 @@ function findUserDataHandle(obj) {
 
 function removeUser(evt) {
     evt.preventDefault();
+    if (!tBody.hasAttribute("hidden")) {
+        tBody.setAttribute("hidden", true);
+    };
     const fullApiUrl = apiUrl + inputId.value;
     if (inputId.value != "") {
         inputId.removeAttribute("required", required = "required");
@@ -94,8 +100,8 @@ function removeUser(evt) {
         inputAge.removeAttribute("required", required = "required");
         fetch(fullApiUrl, { method: "DELETE" })
             .then(() => {
-                getAllUsers();
-                alert("Пользователь успешно удален")
+                alert(`Пользователь "${inputId.value}" успешно удален`)
+                inputId.value = "";
             })
             .catch(error => {
                 alert("Пользователь с таким ID не найден");
@@ -106,7 +112,6 @@ function removeUser(evt) {
         inputId.setAttribute("required", required = "required");
         alert("Введите ID пользователя")
     }
-    inputId.value = "";
     inputName.value = "";
     inputAge.value = "";
 }
@@ -126,8 +131,8 @@ function addUser(evt) {
                 }
             })
             .then(() => {
-                getAllUsers();
-                alert(`Пользователь успешно добавлен`)
+                alert(`Пользователь "${inputName.value}" успешно добавлен`);
+                inputName.value = "";
             })
             .catch(error => {
                 console.log("error");
@@ -138,13 +143,16 @@ function addUser(evt) {
         inputAge.setAttribute("required", required = "required");
         alert("Неверно указаны данные")
     }
-    inputName.value = "";
+    tBody.setAttribute("hidden", nidden = "hidden");
     inputAge.value = "";
     inputId.value = "";
 };
 
 function updateUser(evt) {
     evt.preventDefault();
+    if (!tBody.hasAttribute("hidden")) {
+        tBody.setAttribute("hidden", true);
+    };
     const fullApiUrl = apiUrl + inputId.value;
     if (inputName.value != "" & inputAge.value != "" & inputId.value != "") {
         inputName.removeAttribute("required", required = "required");
@@ -169,13 +177,11 @@ function updateUser(evt) {
     }
     inputName.value = "";
     inputAge.value = "";
-    inputId.value = "";
 };
 
 function updateUserResponseHandle(response) {
     if (response.ok) {
-        alert("Данные пользователя успешно обновлены");
-        // getAllUsers();
-        findUserDataHandle();
+        alert(`Данные пользователя "${inputId.value}" успешно обновлены`);
+        inputId.value = "";
     }
 };
