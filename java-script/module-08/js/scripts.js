@@ -19,11 +19,6 @@ function createGallery(itemsGallery) {
     preview.classList.add("preview");
     imageGallery.append(fullview, preview);
 
-<<<<<<< HEAD
-    // const imgArray = [];
-
-=======
->>>>>>> 105f49f4bbfd0cb7de87387a79b1d0d1a34945c2
     itemsGallery.forEach(elem => {
         const img = createLiImgEl(elem);
         img.addEventListener("click", clickListener);
@@ -67,10 +62,6 @@ function createGallery(itemsGallery) {
     function createLiImgEl(elem) {
         const liElement = document.createElement("li");
         const imgElement = document.createElement("img");
-<<<<<<< HEAD
-        liElement.appendChild(imgElement);
-=======
->>>>>>> 105f49f4bbfd0cb7de87387a79b1d0d1a34945c2
         imgElement.setAttribute("src", elem.preview);
         imgElement.setAttribute("data-fullview", elem.fullview);
         imgElement.setAttribute("alt", elem.alt);
@@ -83,14 +74,12 @@ function createGallery(itemsGallery) {
 
     const createElem = galleryItems => galleryItems.map(item => createLiImgEl(item));
 
-<<<<<<< HEAD
-    const createElLi = createElem(galleryItems);
-    preview.append(...createElLi);
-=======
-    const elementLi = createElem(galleryItems);
-    preview.append(...elementLi);
->>>>>>> 105f49f4bbfd0cb7de87387a79b1d0d1a34945c2
 }
 
 
 createGallery(galleryItems);
+
+
+https: //github.com/cursorksu/goit-fe-advanced/blob/master/module_8/hometask/js/script.js
+
+    https: //github.com/SergioKhodchenko/JavaScript/blob/master/module_08/script.js
