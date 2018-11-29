@@ -28,7 +28,9 @@ function getAllUsers() {
     inputName.value = "";
     inputAge.value = "";
     inputId.value = "";
-
+    inputId.removeAttribute("required", required = "required");
+    inputName.removeAttribute("required", required = "required");
+    inputAge.removeAttribute("required", required = "required");
 }
 
 function responseHandle(response) {
@@ -69,6 +71,7 @@ function getUserById(evt) {
         inputId.setAttribute("required", required = "required");
         alert("Введите ID пользователя")
     }
+    inputId.value = "";
     inputName.value = "";
     inputAge.value = "";
 }
@@ -103,6 +106,9 @@ function removeUser(evt) {
         inputId.setAttribute("required", required = "required");
         alert("Введите ID пользователя")
     }
+    inputId.value = "";
+    inputName.value = "";
+    inputAge.value = "";
 }
 
 function addUser(evt) {
@@ -169,6 +175,7 @@ function updateUser(evt) {
 function updateUserResponseHandle(response) {
     if (response.ok) {
         alert("Данные пользователя успешно обновлены");
-        getAllUsers()
+        // getAllUsers();
+        findUserDataHandle();
     }
 };
