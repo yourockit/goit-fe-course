@@ -27,16 +27,17 @@ for (const item of galleryItems) {
 
 gallery.append(fullView, preView);
 
-let currentSelectedImage = preView.firstElementChild;
+let previewImg = preView.firstElementChild;
+previewImg.classList.add("active");
 
 const selectImgPreview = event => {
-    if (currentSelectedImage.classList.contains("active")) {
-        currentSelectedImage.classList.remove("active");
+    if (previewImg.classList.contains("active")) {
+        previewImg.classList.remove("active");
     }
     const targetImage = event.target;
     fullviewImage.firstElementChild.setAttribute("src", targetImage.dataset.fullview);
     targetImage.classList.add("active");
-    currentSelectedImage = targetImage;
+    previewImg = targetImage;
 }
 
 const previewList = document.querySelector(".preview");
