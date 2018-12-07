@@ -84,7 +84,7 @@ const laptops = [{
 const form = document.querySelector(".js-form");
 const inputs = form.querySelectorAll("input");
 
-const container = document.querySelector(".wrap-card");
+const container = document.querySelector(".wrap-cards");
 const sourse = document.querySelector("#card").innerHTML.trim();
 const tpl = Handlebars.compile(sourse);
 

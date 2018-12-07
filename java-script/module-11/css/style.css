@@ -1,0 +1,108 @@
+    body {
+        margin: 0;
+        font-family: sans-serif;
+        color: rgb(65, 65, 65);
+    }
+    
+    .wrapper {
+        display: flex;
+        justify-content: baseline;
+        width: 920px;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 200px;
+        height: 550px;
+    }
+    
+    section {
+        width: 100%;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    h2 {
+        margin: 10px 0;
+        padding-left: 10px;
+    }
+    
+    section>ul {
+        margin: 0;
+        padding: 10px;
+    }
+    
+    section li {
+        display: flex;
+        margin: 5px;
+    }
+    
+    label {
+        text-transform: uppercase;
+    }
+    
+    button {
+        height: 40px;
+        width: 180px;
+        color: rgb(241, 241, 241);
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: rgb(72, 107, 146);
+        border: 2px solid rgb(72, 107, 146);
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+        transition: 0.2s;
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -ms-transition: 0.2s;
+        -o-transition: 0.2s;
+    }
+    
+    button:hover {
+        background-color: rgba(44, 44, 44, 0.7);
+        border-color: rgba(71, 71, 71, 0.7);
+    }
+    
+    .wrap-cards {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        width: 720px;
+        padding: 20px;
+    }
+    
+    .wrap-card {
+        width: 300px;
+        padding: 5px 20px;
+        box-shadow: 0 3px rgb(56, 56, 56);
+        ;
+    }
+    
+    img {
+        width: 300px;
+        padding-top: 15px;
+    }
+    
+    .title,
+    .color,
+    .price,
+    .size,
+    .date {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    .content>li {
+        padding: 3px;
+    }
