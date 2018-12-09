@@ -98,6 +98,8 @@ const resetFilter = () => {
     filter.size = [];
     filter.color = [];
     filter.release_date = [];
+
+    marcupHTML(laptops)
 }
 
 const getChecked = function(e) {
@@ -105,13 +107,13 @@ const getChecked = function(e) {
 
     const arrInputs = Array.from(inputs);
     arrInputs.filter(input => input.checked).map(item => {
-        if (item.name === 'size') {
+        if (item.name === "size") {
             filter.size.push(item.value)
         };
-        if (item.name === 'color') {
+        if (item.name === "color") {
             filter.color.push(item.value)
         };
-        if (item.name === 'release_date') {
+        if (item.name === "release_date") {
             filter.release_date.push(item.value)
         }
     });
@@ -119,13 +121,11 @@ const getChecked = function(e) {
     const newArray = filterItems(laptops, filter)
 
     marcupHTML(newArray);
-
-    resetFilter();
 }
 
 const marcupHTML = (arr) => {
     const marcup = arr
-        .reduce((acc, laptop) => acc + tpl(laptop), '');
+        .reduce((acc, laptop) => acc + tpl(laptop), "");
     container.innerHTML = marcup;
 }
 
