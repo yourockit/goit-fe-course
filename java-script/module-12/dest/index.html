@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Module-12</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <form action="#" class="header__form js-form"><input type="text" class="form__input" placeholder="https://..."> <button class="form__btn btn">Добавить</button></form>
+        </header>
+        <main class="main">
+            <section class="links">
+                <ul class="links__list js-list"></ul>
+            </section>
+        </main>
+    </div><template id="links"><li class="links__item js-item"><a class="links__link" href="{{url}}">{{url}}</a><button class="btn links__btn js-del">Del</button></li></template>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

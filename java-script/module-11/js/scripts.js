@@ -129,25 +129,32 @@ const marcupHTML = (arr) => {
     container.innerHTML = marcup;
 }
 
-const getLaptopBySize = (arr, sizes) =>
-    arr.filter(produkt => sizes.length ?
-        sizes.some((size) => produkt.size == size) :
+const getLaptop = (arr, param, key) =>
+    arr.filter(product => param.length ?
+        param.some((item) => product[key] == item) :
         true);
 
-const getLaptopByColor = (arr, colors) =>
-    arr.filter(produkt => colors.length ?
-        colors.some((color) => produkt.color == color) :
-        true);
+// const getLaptopBySize = (arr, sizes) =>
+//     arr.filter(produkt => sizes.length ?
+//         sizes.some((size) => produkt.size == size) :
+//         true);
 
-const getLaptopByRelease = (arr, dates) =>
-    arr.filter(produkt => dates.length ?
-        dates.some((item) => produkt.release_date == item) :
-        true);
+// const getLaptopByColor = (arr, colors) =>
+//     arr.filter(produkt => colors.length ?
+//         colors.some((color) => produkt.color == color) :
+//         true);
+
+// const getLaptopByRelease = (arr, dates) =>
+//     arr.filter(produkt => dates.length ?
+//         dates.some((item) => produkt.release_date == item) :
+//         true);
 
 const filterItems = (arr, options) => {
-    const filteredBySize = getLaptopBySize(arr, options.size)
-    const filteredByColor = getLaptopByColor(filteredBySize, options.color)
-    const filteredByRelease = getLaptopByRelease(filteredByColor, options.release_date)
+    const filteredBySize = getLaptop(arr, options.size)
+    const filteredByColor = getLaptop(filteredBySize, options.color)
+    const filteredByRelease = getLaptop(filteredByColor, options.release_date)
+
+    console.log(filteredBySize)
 
     return filteredByRelease
 }
