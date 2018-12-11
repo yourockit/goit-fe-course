@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     babel = require("gulp-babel");
 
 gulp.task('sass', function() {
-    return gulp.src('app/sass/main.sass')
+    return gulp.src('app/sass/style.sass')
         .pipe(sass())
         .pipe(gulp.hw('app/css'))
         .pipe(browserSync.reload({ stream: true }));
