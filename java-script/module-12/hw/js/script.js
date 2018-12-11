@@ -9,8 +9,7 @@ window.onload = function() {
         btnDelete: document.querySelector(".js-del"),
         linksList: document.querySelector(".js-list"),
         linksItem: document.querySelector(".js-item")
-    }; //Будущий объект карточек
-    //Разметка
+    };
 
     const list = document.querySelector('.links__list');
     const sourse = document.querySelector('#links').innerHTML.trim();
@@ -28,8 +27,7 @@ window.onload = function() {
     const createCard = item => {
         const markup = template(item);
         return markup;
-    }; //Аякс Запросы
-
+    };
 
     const getItem = query => fetch(`http://api.linkpreview.net/?key=5bc46fbf6c978842625dc46b85b5a25f333e5ce7f3f42&q=${query}`, {
         method: 'GET',
@@ -39,8 +37,7 @@ window.onload = function() {
         throw new Error(`Ошибочка вышла: ${response.statusText}`);
     }).catch(error => {
         console.log(`Ошибочка вышла : ${error}`);
-    }); //Функции для слушателей событий
-
+    });
 
     const hendelPushLink = function(e) {
         e.preventDefault();
@@ -61,11 +58,7 @@ window.onload = function() {
             } else {
                 alert('Эта ссылка уже есть в списке.. \nВведите другую ссылку');
             }
-        }); //LS
-
-        // log(`obj:`, linksList);
-        // foo = linksList;
-        // localStorage.foo = JSON.stringify(foo);
+        });
     };
 
     const hendelRemoveLink = function(e) {
@@ -77,8 +70,7 @@ window.onload = function() {
         linksList = linksList.filter(item => item.url !== link);
         parent.remove();
         data = [linksList.map(li => li.innerHTML)];
-    }; //Слушатели событий
-
+    };
 
     refs.linksList.addEventListener('click', hendelRemoveLink);
     refs.form.addEventListener('submit', hendelPushLink);
