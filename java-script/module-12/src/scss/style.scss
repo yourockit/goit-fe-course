@@ -27,7 +27,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 520px;
+    width: 540px;
     margin: auto;
     padding-bottom: 40px;
 }
@@ -78,4 +78,5 @@ button:hover {
 .card__url {
     font-family: sans-serif;
     font-size: 1rem;
+    overflow-x: hidden;
 }
