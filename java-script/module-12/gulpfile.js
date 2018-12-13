@@ -1,77 +1,110 @@
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    browserSync = require('browser-sync'),
-    minify = require('gulp-minify'),
-    cleanCSS = require('gulp-clean-css'),
-    imagemin = require('gulp-imagemin'),
-    htmlmin = require('gulp-htmlmin'),
-    babel = require("gulp-babel");
+'use strict';
 
-gulp.task('sass', function() {
-    return gulp.src('app/sass/style.sass')
-        .pipe(sass())
-        .pipe(gulp.hw('app/css'))
-        .pipe(browserSync.reload({ stream: true }));
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('gulp-cssnano');
+const gcmq = require('gulp-group-css-media-queries');
+const del = require('del');
+const htmlmin = require('gulp-htmlmin');
+const imagemin = require('gulp-imagemin');
+const svgstore = require('gulp-svgstore');
+const plumber = require('gulp-plumber');
+const rigger = require('gulp-rigger');
+const stylelint = require('gulp-stylelint');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const browserSync = require('browser-sync').create();
+const sequence = require('run-sequence');
+
+gulp.task('html', () =>
+    gulp
+    .src('./src/*.html')
+    .pipe(rigger())
+    .pipe(
+        htmlmin({
+            collapseWhitespace: true,
+        }),
+    )
+    .pipe(gulp.dest('./dist')),
+);
+
+gulp.task('styles', () =>
+    gulp
+    .src('./src/scss/styles.scss')
+    .pipe(plumber())
+    .pipe(
+        stylelint({
+            reporters: [{ formatter: 'string', console: true }],
+        }),
+    )
+    .pipe(sass())
+    .pipe(postcss([autoprefixer()]))
+    .pipe(gcmq())
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(cssnano())
+    .pipe(rename('styles.min.css'))
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(browserSync.stream()),
+);
+
+gulp.task('index', () =>
+    gulp
+    .src('./src/js/**/*.js')
+    .pipe(plumber())
+    .pipe(
+        babel({
+            presets: ['env'],
+        }),
+    )
+    .pipe(concat('index.js'))
+    .pipe(gulp.dest('./dist/js'))
+    .pipe(uglify())
+    .pipe(rename('index.min.js'))
+    .pipe(gulp.dest('./dist/js')),
+);
+
+gulp.task('fonts', () =>
+    gulp.src('./src/fonts/**/*.{woff,woff2}').pipe(gulp.dest('./dist/fonts')),
+);
+
+gulp.task('watch', () => {
+    gulp.watch('src/**/*.html', ['html']).on('change', browserSync.reload);
+    gulp.watch('src/scss/**/*.scss', ['styles']);
+    gulp.watch('src/js/**/*.js', ['index']);
 });
 
-gulp.task('browser-sync', function() {
-    browserSync({
-        server: {
-            baseDir: 'app'
-        },
-        notify: false
-    });
+gulp.task('serve', ['styles'], () =>
+    browserSync.init({
+        server: './dist',
+        notify: false,
+        open: true,
+        cors: true,
+        ui: false,
+        logPrefix: 'DevServer',
+        host: 'localhost',
+        port: 3000,
+    }),
+);
 
-    gulp.task('sass', function() {
-        return gulp.src('app/sass/**/*.sass')
-            .pipe(sass())
-            .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
-            .pipe(gulp.hw('app/css'))
-            .pipe(browserSync.reload({ stream: true }));
-    });
+gulp.task('del:dist', () => del('./dist'));
 
-    gulp.task("babel", function() {
-        return gulp.src("app/js/**/*.js")
-            .pipe(babel())
-            .pipe(gulp.hw("app/js"));
-    });
+gulp.task('prepare', () => del(['**/.gitkeep', 'README.md', 'banner.png']));
 
-    gulp.task('compress', function() {
-        gulp.src('app/images/*')
-            .pipe(imagemin())
-            .pipe(gulp.hw('hw/images'))
-    });
+gulp.task('dist', cb =>
+    sequence(
+        'del:dist',
+        'svg-sprite',
+        'images',
+        'fonts',
+        'styles',
+        'html',
+        'index',
+        cb,
+    ),
+);
 
-    gulp.task('minify-css', () => {
-        return gulp.src('app/css/*.css')
-            .pipe(cleanCSS({ compatibility: 'ie8' }))
-            .pipe(gulp.hw('hw/css'));
-    });
-
-    gulp.task('minify-js', function() {
-        gulp.src(['app/js/*.js', 'app/js/*.mjs'])
-            .pipe(minify())
-            .pipe(gulp.hw('hw/js'))
-    });
-    gulp.task('minify-html', () => {
-        return gulp.src('app/*.html')
-            .pipe(htmlmin({ collapseWhitespace: true }))
-            .pipe(gulp.hw('hw'));
-    });
-
-    gulp.task('build', ['babel', 'compress', 'minify-css', 'minify-js', 'minify-html'], function() {
-        gulp.build('images/*', ['compress']);
-        gulp.build('app/js/**/*.js', ['babel']);
-        gulp.build('app/css/**/*.css', ['minify-css']);
-        gulp.build('app/js/**/*.js', ['minify-js']);
-        gulp.build('app/*.html', ['minify-html']);
-
-    });
-
-    gulp.task('watch', ['browser-sync', 'sass'], function() {
-        gulp.watch('app/sass/**/*.sass', ['sass']);
-        gulp.watch('app/*.html', browserSync.reload);
-        gulp.watch('app/js/**/*.js', browserSync.reload);
-    });
-})
+gulp.task('start', cb => sequence('dist', 'serve', 'watch'));
