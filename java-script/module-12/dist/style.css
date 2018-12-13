@@ -100,7 +100,7 @@ button:hover {
 .card__url {
     font-family: sans-serif;
     font-size: 1rem;
-    overflow-x: hidden;
+    overflow: auto;
 }
 
 
